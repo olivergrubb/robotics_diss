@@ -1,0 +1,24 @@
+[0.012s] Invoking command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/home/ollie/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --build /home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox -- -j16 -l16
+[0.050s] [ 60%] Built target turtlebot4_ignition_toolbox_lib
+[0.068s] [100%] Built target turtlebot4_ignition_hmi_node
+[0.186s] Invoked command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/home/ollie/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --build /home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox -- -j16 -l16
+[0.210s] Invoking command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/home/ollie/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --install /home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox
+[0.215s] -- Install configuration: ""
+[0.215s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/lib/turtlebot4_ignition_toolbox/turtlebot4_ignition_hmi_node
+[0.215s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/ament_index/resource_index/package_run_dependencies/turtlebot4_ignition_toolbox
+[0.216s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/ament_index/resource_index/parent_prefix_path/turtlebot4_ignition_toolbox
+[0.216s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/environment/ament_prefix_path.sh
+[0.216s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/environment/ament_prefix_path.dsv
+[0.216s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/environment/path.sh
+[0.216s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/environment/path.dsv
+[0.216s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/local_setup.bash
+[0.216s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/local_setup.sh
+[0.216s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/local_setup.zsh
+[0.216s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/local_setup.dsv
+[0.216s] -- Installing: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.dsv
+[0.216s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/ament_index/resource_index/packages/turtlebot4_ignition_toolbox
+[0.216s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.216s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/cmake/turtlebot4_ignition_toolboxConfig.cmake
+[0.216s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/cmake/turtlebot4_ignition_toolboxConfig-version.cmake
+[0.217s] -- Up-to-date: /home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.xml
+[0.223s] Invoked command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/home/ollie/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --install /home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox

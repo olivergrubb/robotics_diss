@@ -1,0 +1,22 @@
+[0.541s] Invoking command in '/home/ollie/ros2_ws/src/recovery_pipeline': PYTHONPATH=/home/ollie/ros2_ws/build/recovery_pipeline/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/recovery_pipeline build --build-base /home/ollie/ros2_ws/build/recovery_pipeline/build install --record /home/ollie/ros2_ws/build/recovery_pipeline/install.log --single-version-externally-managed install_data
+[0.673s] running egg_info
+[0.673s] writing ../../build/recovery_pipeline/recovery_pipeline.egg-info/PKG-INFO
+[0.674s] writing dependency_links to ../../build/recovery_pipeline/recovery_pipeline.egg-info/dependency_links.txt
+[0.674s] writing entry points to ../../build/recovery_pipeline/recovery_pipeline.egg-info/entry_points.txt
+[0.674s] writing requirements to ../../build/recovery_pipeline/recovery_pipeline.egg-info/requires.txt
+[0.674s] writing top-level names to ../../build/recovery_pipeline/recovery_pipeline.egg-info/top_level.txt
+[0.675s] reading manifest file '../../build/recovery_pipeline/recovery_pipeline.egg-info/SOURCES.txt'
+[0.676s] writing manifest file '../../build/recovery_pipeline/recovery_pipeline.egg-info/SOURCES.txt'
+[0.676s] running build
+[0.676s] running build_py
+[0.677s] running install
+[0.677s] running install_lib
+[0.678s] running install_data
+[0.678s] running install_egg_info
+[0.679s] removing '/home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline-0.0.0-py3.10.egg-info' (and everything under it)
+[0.680s] Copying ../../build/recovery_pipeline/recovery_pipeline.egg-info to /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline-0.0.0-py3.10.egg-info
+[0.680s] running install_scripts
+[0.694s] Installing error_detection script to /home/ollie/ros2_ws/install/recovery_pipeline/lib/recovery_pipeline
+[0.694s] Installing error_responder script to /home/ollie/ros2_ws/install/recovery_pipeline/lib/recovery_pipeline
+[0.694s] writing list of installed files to '/home/ollie/ros2_ws/build/recovery_pipeline/install.log'
+[0.712s] Invoked command in '/home/ollie/ros2_ws/src/recovery_pipeline' returned '0': PYTHONPATH=/home/ollie/ros2_ws/build/recovery_pipeline/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/recovery_pipeline build --build-base /home/ollie/ros2_ws/build/recovery_pipeline/build install --record /home/ollie/ros2_ws/build/recovery_pipeline/install.log --single-version-externally-managed install_data

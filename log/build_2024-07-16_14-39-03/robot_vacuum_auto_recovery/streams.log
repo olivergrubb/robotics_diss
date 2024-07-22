@@ -1,0 +1,33 @@
+[0.544s] Invoking command in '/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery': PYTHONPATH=/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/build
+[0.720s] running develop
+[0.721s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[0.721s]   warnings.warn(
+[0.872s] Removing /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages/robot-vacuum-auto-recovery.egg-link (link to .)
+[0.890s] Invoked command in '/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery' returned '0': PYTHONPATH=/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --uninstall --editable --build-directory /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/build
+[0.891s] Invoking command in '/home/ollie/ros2_ws/src/robot_vacuum_auto_recovery': PYTHONPATH=/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/robot_vacuum_auto_recovery build --build-base /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/build install --record /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/install.log --single-version-externally-managed install_data --force
+[1.057s] running egg_info
+[1.058s] writing ../../build/robot_vacuum_auto_recovery/robot_vacuum_auto_recovery.egg-info/PKG-INFO
+[1.058s] writing dependency_links to ../../build/robot_vacuum_auto_recovery/robot_vacuum_auto_recovery.egg-info/dependency_links.txt
+[1.058s] writing entry points to ../../build/robot_vacuum_auto_recovery/robot_vacuum_auto_recovery.egg-info/entry_points.txt
+[1.058s] writing requirements to ../../build/robot_vacuum_auto_recovery/robot_vacuum_auto_recovery.egg-info/requires.txt
+[1.058s] writing top-level names to ../../build/robot_vacuum_auto_recovery/robot_vacuum_auto_recovery.egg-info/top_level.txt
+[1.059s] reading manifest file '../../build/robot_vacuum_auto_recovery/robot_vacuum_auto_recovery.egg-info/SOURCES.txt'
+[1.060s] writing manifest file '../../build/robot_vacuum_auto_recovery/robot_vacuum_auto_recovery.egg-info/SOURCES.txt'
+[1.060s] running build
+[1.060s] running build_py
+[1.061s] running install
+[1.061s] running install_lib
+[1.061s] creating /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages/robot_vacuum_auto_recovery
+[1.061s] copying /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/build/lib/robot_vacuum_auto_recovery/__init__.py -> /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages/robot_vacuum_auto_recovery
+[1.061s] copying /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/build/lib/robot_vacuum_auto_recovery/test_node.py -> /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages/robot_vacuum_auto_recovery
+[1.073s] byte-compiling /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages/robot_vacuum_auto_recovery/__init__.py to __init__.cpython-310.pyc
+[1.073s] byte-compiling /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages/robot_vacuum_auto_recovery/test_node.py to test_node.cpython-310.pyc
+[1.073s] running install_data
+[1.073s] copying resource/robot_vacuum_auto_recovery -> /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/ament_index/resource_index/packages
+[1.094s] copying package.xml -> /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery
+[1.095s] running install_egg_info
+[1.097s] Copying ../../build/robot_vacuum_auto_recovery/robot_vacuum_auto_recovery.egg-info to /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages/robot_vacuum_auto_recovery-0.0.0-py3.10.egg-info
+[1.114s] running install_scripts
+[1.127s] Installing button_press script to /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/robot_vacuum_auto_recovery
+[1.128s] writing list of installed files to '/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/install.log'
+[1.142s] Invoked command in '/home/ollie/ros2_ws/src/robot_vacuum_auto_recovery' returned '0': PYTHONPATH=/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/robot_vacuum_auto_recovery build --build-base /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/build install --record /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/install.log --single-version-externally-managed install_data --force

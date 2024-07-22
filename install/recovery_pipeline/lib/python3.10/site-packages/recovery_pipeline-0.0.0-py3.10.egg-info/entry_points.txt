@@ -1,0 +1,4 @@
+[console_scripts]
+error_detection = recovery_pipeline.error_detection:main
+error_responder = recovery_pipeline.error_responder:main
+

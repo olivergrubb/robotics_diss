@@ -1,0 +1,89 @@
+[0.605s] Invoking command in '/home/ollie/ros2_ws/src/recovery_pipeline': PYTHONPATH=/home/ollie/ros2_ws/build/recovery_pipeline/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/recovery_pipeline build --build-base /home/ollie/ros2_ws/build/recovery_pipeline/build install --record /home/ollie/ros2_ws/build/recovery_pipeline/install.log --single-version-externally-managed install_data
+[0.784s] running egg_info
+[0.785s] creating ../../build/recovery_pipeline/recovery_pipeline.egg-info
+[0.785s] writing ../../build/recovery_pipeline/recovery_pipeline.egg-info/PKG-INFO
+[0.785s] writing dependency_links to ../../build/recovery_pipeline/recovery_pipeline.egg-info/dependency_links.txt
+[0.785s] writing entry points to ../../build/recovery_pipeline/recovery_pipeline.egg-info/entry_points.txt
+[0.785s] writing requirements to ../../build/recovery_pipeline/recovery_pipeline.egg-info/requires.txt
+[0.785s] writing top-level names to ../../build/recovery_pipeline/recovery_pipeline.egg-info/top_level.txt
+[0.785s] writing manifest file '../../build/recovery_pipeline/recovery_pipeline.egg-info/SOURCES.txt'
+[0.786s] reading manifest file '../../build/recovery_pipeline/recovery_pipeline.egg-info/SOURCES.txt'
+[0.787s] writing manifest file '../../build/recovery_pipeline/recovery_pipeline.egg-info/SOURCES.txt'
+[0.787s] running build
+[0.787s] running build_py
+[0.787s] creating /home/ollie/ros2_ws/build/recovery_pipeline/build
+[0.787s] creating /home/ollie/ros2_ws/build/recovery_pipeline/build/lib
+[0.787s] creating /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline
+[0.787s] copying recovery_pipeline/error_detection.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline
+[0.787s] copying recovery_pipeline/__init__.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline
+[0.787s] copying recovery_pipeline/error_responder.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline
+[0.788s] creating /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/resources
+[0.788s] copying recovery_pipeline/resources/helper_functions.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/resources
+[0.788s] copying recovery_pipeline/resources/__init__.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/resources
+[0.788s] copying recovery_pipeline/resources/fake_detection_pub.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/resources
+[0.788s] copying recovery_pipeline/resources/vacuum_progress.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/resources
+[0.788s] creating /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_detectors
+[0.788s] copying recovery_pipeline/error_detectors/__init__.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_detectors
+[0.788s] copying recovery_pipeline/error_detectors/wheels_off_ground.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_detectors
+[0.788s] copying recovery_pipeline/error_detectors/doorway_boundary.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_detectors
+[0.788s] copying recovery_pipeline/error_detectors/error_detectors.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_detectors
+[0.788s] creating /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_responders
+[0.788s] copying recovery_pipeline/error_responders/__init__.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_responders
+[0.789s] copying recovery_pipeline/error_responders/perpendicular_alignment_to_doorway_and_speed.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_responders
+[0.789s] copying recovery_pipeline/error_responders/error_responders.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_responders
+[0.789s] copying recovery_pipeline/error_responders/place_robot_upright.py -> /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_responders
+[0.789s] running install
+[0.789s] running install_lib
+[0.790s] creating /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline
+[0.790s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_detection.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline
+[0.790s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/__init__.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline
+[0.790s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_responder.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline
+[0.790s] creating /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/resources
+[0.790s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/resources/helper_functions.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/resources
+[0.790s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/resources/__init__.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/resources
+[0.790s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/resources/fake_detection_pub.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/resources
+[0.790s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/resources/vacuum_progress.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/resources
+[0.790s] creating /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detectors
+[0.790s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_detectors/__init__.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detectors
+[0.790s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_detectors/wheels_off_ground.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detectors
+[0.790s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_detectors/doorway_boundary.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detectors
+[0.791s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_detectors/error_detectors.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detectors
+[0.791s] creating /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders
+[0.791s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_responders/__init__.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders
+[0.791s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_responders/perpendicular_alignment_to_doorway_and_speed.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders
+[0.791s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_responders/error_responders.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders
+[0.791s] copying /home/ollie/ros2_ws/build/recovery_pipeline/build/lib/recovery_pipeline/error_responders/place_robot_upright.py -> /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders
+[0.791s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detection.py to error_detection.cpython-310.pyc
+[0.792s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/__init__.py to __init__.cpython-310.pyc
+[0.792s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responder.py to error_responder.cpython-310.pyc
+[0.792s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/resources/helper_functions.py to helper_functions.cpython-310.pyc
+[0.792s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/resources/__init__.py to __init__.cpython-310.pyc
+[0.792s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/resources/fake_detection_pub.py to fake_detection_pub.cpython-310.pyc
+[0.793s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/resources/vacuum_progress.py to vacuum_progress.cpython-310.pyc
+[0.793s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detectors/__init__.py to __init__.cpython-310.pyc
+[0.793s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detectors/wheels_off_ground.py to wheels_off_ground.cpython-310.pyc
+[0.793s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detectors/doorway_boundary.py to doorway_boundary.cpython-310.pyc
+[0.794s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detectors/error_detectors.py to error_detectors.cpython-310.pyc
+[0.794s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/__init__.py to __init__.cpython-310.pyc
+[0.794s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/perpendicular_alignment_to_doorway_and_speed.py to perpendicular_alignment_to_doorway_and_speed.cpython-310.pyc
+[0.794s]   File "/home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/perpendicular_alignment_to_doorway_and_speed.py", line 13
+[0.794s]     self.execute_recovery_tree_client = ActionClient(self, , 'execute_recovery_tree')
+[0.794s]                                                            ^
+[0.794s] SyntaxError: invalid syntax
+[0.794s] 
+[0.794s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/error_responders.py to error_responders.cpython-310.pyc
+[0.794s] byte-compiling /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/place_robot_upright.py to place_robot_upright.cpython-310.pyc
+[0.794s] running install_data
+[0.794s] creating /home/ollie/ros2_ws/install/recovery_pipeline/share/ament_index
+[0.794s] creating /home/ollie/ros2_ws/install/recovery_pipeline/share/ament_index/resource_index
+[0.795s] creating /home/ollie/ros2_ws/install/recovery_pipeline/share/ament_index/resource_index/packages
+[0.795s] copying resource/recovery_pipeline -> /home/ollie/ros2_ws/install/recovery_pipeline/share/ament_index/resource_index/packages
+[0.795s] copying package.xml -> /home/ollie/ros2_ws/install/recovery_pipeline/share/recovery_pipeline
+[0.795s] creating /home/ollie/ros2_ws/install/recovery_pipeline/share/recovery_pipeline/launch
+[0.795s] running install_egg_info
+[0.796s] Copying ../../build/recovery_pipeline/recovery_pipeline.egg-info to /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline-0.0.0-py3.10.egg-info
+[0.797s] running install_scripts
+[0.810s] Installing error_detection script to /home/ollie/ros2_ws/install/recovery_pipeline/lib/recovery_pipeline
+[0.810s] Installing error_responder script to /home/ollie/ros2_ws/install/recovery_pipeline/lib/recovery_pipeline
+[0.811s] writing list of installed files to '/home/ollie/ros2_ws/build/recovery_pipeline/install.log'
+[0.827s] Invoked command in '/home/ollie/ros2_ws/src/recovery_pipeline' returned '0': PYTHONPATH=/home/ollie/ros2_ws/build/recovery_pipeline/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/recovery_pipeline build --build-base /home/ollie/ros2_ws/build/recovery_pipeline/build install --record /home/ollie/ros2_ws/build/recovery_pipeline/install.log --single-version-externally-managed install_data

@@ -1,0 +1,381 @@
+[0.078s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.078s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x74ac9c43a8c0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x74ac9c43a320>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x74ac9c43a320>>, mixin_verb=('build',))
+[0.336s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.336s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.336s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.336s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.336s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.336s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.336s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/ollie/ros2_ws'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.344s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_vacuum_auto_recovery) by extensions ['ignore', 'ignore_ament_install']
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_vacuum_auto_recovery) by extension 'ignore'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_vacuum_auto_recovery) by extension 'ignore_ament_install'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_vacuum_auto_recovery) by extensions ['colcon_pkg']
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_vacuum_auto_recovery) by extension 'colcon_pkg'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_vacuum_auto_recovery) by extensions ['colcon_meta']
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_vacuum_auto_recovery) by extension 'colcon_meta'
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_vacuum_auto_recovery) by extensions ['ros']
+[0.345s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_vacuum_auto_recovery) by extension 'ros'
+[0.346s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_vacuum_auto_recovery' with type 'ros.ament_python' and name 'robot_vacuum_auto_recovery'
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.346s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_bringup) by extension 'ignore'
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_bringup) by extension 'ignore_ament_install'
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_bringup) by extensions ['colcon_pkg']
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_bringup) by extension 'colcon_pkg'
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_bringup) by extensions ['colcon_meta']
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_bringup) by extension 'colcon_meta'
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_bringup) by extensions ['ros']
+[0.347s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_bringup) by extension 'ros'
+[0.348s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_ignition_bringup' with type 'ros.ament_cmake' and name 'turtlebot4_ignition_bringup'
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_gui_plugins) by extensions ['ignore', 'ignore_ament_install']
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_gui_plugins) by extension 'ignore'
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_gui_plugins) by extension 'ignore_ament_install'
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_gui_plugins) by extensions ['colcon_pkg']
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_gui_plugins) by extension 'colcon_pkg'
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_gui_plugins) by extensions ['colcon_meta']
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_gui_plugins) by extension 'colcon_meta'
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_gui_plugins) by extensions ['ros']
+[0.348s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_gui_plugins) by extension 'ros'
+[0.349s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_ignition_gui_plugins' with type 'ros.ament_cmake' and name 'turtlebot4_ignition_gui_plugins'
+[0.349s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_toolbox) by extensions ['ignore', 'ignore_ament_install']
+[0.349s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_toolbox) by extension 'ignore'
+[0.349s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_toolbox) by extension 'ignore_ament_install'
+[0.349s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_toolbox) by extensions ['colcon_pkg']
+[0.349s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_toolbox) by extension 'colcon_pkg'
+[0.349s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_toolbox) by extensions ['colcon_meta']
+[0.349s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_toolbox) by extension 'colcon_meta'
+[0.349s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_toolbox) by extensions ['ros']
+[0.349s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_ignition_toolbox) by extension 'ros'
+[0.349s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_ignition_toolbox' with type 'ros.ament_cmake' and name 'turtlebot4_ignition_toolbox'
+[0.349s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extensions ['ignore', 'ignore_ament_install']
+[0.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extension 'ignore'
+[0.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extension 'ignore_ament_install'
+[0.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extensions ['colcon_pkg']
+[0.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extension 'colcon_pkg'
+[0.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extensions ['colcon_meta']
+[0.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extension 'colcon_meta'
+[0.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extensions ['ros']
+[0.350s] Level 1:colcon.colcon_core.package_identification:_identify(src/turtlebot4_simulator) by extension 'ros'
+[0.350s] DEBUG:colcon.colcon_core.package_identification:Package 'src/turtlebot4_simulator' with type 'ros.ament_cmake' and name 'turtlebot4_simulator'
+[0.350s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.350s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.350s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.350s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.350s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.370s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.370s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.377s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/ollie/ros2_ws/install
+[0.378s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 378 installed packages in /opt/ros/humble
+[0.380s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'robot_vacuum_auto_recovery' build argument 'cmake_args' from command line to 'None'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'robot_vacuum_auto_recovery' build argument 'cmake_target' from command line to 'None'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'robot_vacuum_auto_recovery' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'robot_vacuum_auto_recovery' build argument 'cmake_clean_cache' from command line to 'False'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'robot_vacuum_auto_recovery' build argument 'cmake_clean_first' from command line to 'False'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'robot_vacuum_auto_recovery' build argument 'cmake_force_configure' from command line to 'False'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'robot_vacuum_auto_recovery' build argument 'ament_cmake_args' from command line to 'None'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'robot_vacuum_auto_recovery' build argument 'catkin_cmake_args' from command line to 'None'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'robot_vacuum_auto_recovery' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.471s] DEBUG:colcon.colcon_core.verb:Building package 'robot_vacuum_auto_recovery' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery', 'merge_install': False, 'path': '/home/ollie/ros2_ws/src/robot_vacuum_auto_recovery', 'symlink_install': True, 'test_result_base': None}
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'cmake_args' from command line to 'None'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'cmake_target' from command line to 'None'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'cmake_clean_cache' from command line to 'False'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'cmake_clean_first' from command line to 'False'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'cmake_force_configure' from command line to 'False'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'ament_cmake_args' from command line to 'None'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'catkin_cmake_args' from command line to 'None'
+[0.471s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_gui_plugins' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.471s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_ignition_gui_plugins' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ollie/ros2_ws/build/turtlebot4_ignition_gui_plugins', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins', 'merge_install': False, 'path': '/home/ollie/ros2_ws/src/turtlebot4_ignition_gui_plugins', 'symlink_install': True, 'test_result_base': None}
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'cmake_args' from command line to 'None'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'cmake_target' from command line to 'None'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'cmake_clean_cache' from command line to 'False'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'cmake_clean_first' from command line to 'False'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'cmake_force_configure' from command line to 'False'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'ament_cmake_args' from command line to 'None'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'catkin_cmake_args' from command line to 'None'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_toolbox' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.472s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_ignition_toolbox' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox', 'merge_install': False, 'path': '/home/ollie/ros2_ws/src/turtlebot4_ignition_toolbox', 'symlink_install': True, 'test_result_base': None}
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'cmake_args' from command line to 'None'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'cmake_target' from command line to 'None'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_ignition_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.472s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_ignition_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup', 'merge_install': False, 'path': '/home/ollie/ros2_ws/src/turtlebot4_ignition_bringup', 'symlink_install': True, 'test_result_base': None}
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'cmake_args' from command line to 'None'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'cmake_target' from command line to 'None'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'cmake_clean_cache' from command line to 'False'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'cmake_clean_first' from command line to 'False'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'cmake_force_configure' from command line to 'False'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'ament_cmake_args' from command line to 'None'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'catkin_cmake_args' from command line to 'None'
+[0.472s] Level 5:colcon.colcon_core.verb:set package 'turtlebot4_simulator' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.472s] DEBUG:colcon.colcon_core.verb:Building package 'turtlebot4_simulator' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ollie/ros2_ws/build/turtlebot4_simulator', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ollie/ros2_ws/install/turtlebot4_simulator', 'merge_install': False, 'path': '/home/ollie/ros2_ws/src/turtlebot4_simulator', 'symlink_install': True, 'test_result_base': None}
+[0.473s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.473s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.473s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ollie/ros2_ws/src/turtlebot4_ignition_gui_plugins' with build type 'ament_cmake'
+[0.473s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ollie/ros2_ws/src/turtlebot4_ignition_gui_plugins'
+[0.475s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.475s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.475s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.478s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ollie/ros2_ws/src/turtlebot4_ignition_toolbox' with build type 'ament_cmake'
+[0.478s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ollie/ros2_ws/src/turtlebot4_ignition_toolbox'
+[0.479s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.479s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.481s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/ollie/ros2_ws/src/robot_vacuum_auto_recovery' with build type 'ament_python'
+[0.481s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_vacuum_auto_recovery', 'ament_prefix_path')
+[0.481s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/hook/ament_prefix_path.ps1'
+[0.482s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/hook/ament_prefix_path.dsv'
+[0.482s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/hook/ament_prefix_path.sh'
+[0.483s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.483s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.550s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_gui_plugins': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --build /home/ollie/ros2_ws/build/turtlebot4_ignition_gui_plugins -- -j16 -l16
+[0.563s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --build /home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox -- -j16 -l16
+[0.747s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/ollie/ros2_ws/src/robot_vacuum_auto_recovery'
+[0.747s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.747s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.751s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_gui_plugins' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --build /home/ollie/ros2_ws/build/turtlebot4_ignition_gui_plugins -- -j16 -l16
+[0.775s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_gui_plugins': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --install /home/ollie/ros2_ws/build/turtlebot4_ignition_gui_plugins
+[0.804s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --build /home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox -- -j16 -l16
+[0.805s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_ignition_gui_plugins)
+[0.805s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_gui_plugins' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --install /home/ollie/ros2_ws/build/turtlebot4_ignition_gui_plugins
+[0.815s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins' for CMake module files
+[0.816s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins' for CMake config files
+[0.816s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_ignition_gui_plugins', 'cmake_prefix_path')
+[0.817s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/hook/cmake_prefix_path.ps1'
+[0.817s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/hook/cmake_prefix_path.dsv'
+[0.817s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/hook/cmake_prefix_path.sh'
+[0.818s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/bin'
+[0.818s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/lib/pkgconfig/turtlebot4_ignition_gui_plugins.pc'
+[0.818s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/lib/python3.10/site-packages'
+[0.818s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/bin'
+[0.818s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.ps1'
+[0.819s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.dsv'
+[0.819s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.sh'
+[0.820s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.bash'
+[0.820s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.zsh'
+[0.821s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/colcon-core/packages/turtlebot4_ignition_gui_plugins)
+[0.826s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --install /home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox
+[0.838s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_ignition_gui_plugins)
+[0.838s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins' for CMake module files
+[0.839s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins' for CMake config files
+[0.840s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_ignition_gui_plugins', 'cmake_prefix_path')
+[0.840s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/hook/cmake_prefix_path.ps1'
+[0.840s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/hook/cmake_prefix_path.dsv'
+[0.840s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/hook/cmake_prefix_path.sh'
+[0.840s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/bin'
+[0.841s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/lib/pkgconfig/turtlebot4_ignition_gui_plugins.pc'
+[0.841s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/lib/python3.10/site-packages'
+[0.841s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/bin'
+[0.841s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.ps1'
+[0.841s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.dsv'
+[0.842s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.sh'
+[0.842s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.bash'
+[0.842s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/turtlebot4_ignition_gui_plugins/package.zsh'
+[0.843s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins/share/colcon-core/packages/turtlebot4_ignition_gui_plugins)
+[0.849s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_ignition_toolbox)
+[0.849s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox' for CMake module files
+[0.849s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --install /home/ollie/ros2_ws/build/turtlebot4_ignition_toolbox
+[0.850s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox' for CMake config files
+[0.851s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_ignition_toolbox', 'cmake_prefix_path')
+[0.851s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/hook/cmake_prefix_path.ps1'
+[0.851s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/hook/cmake_prefix_path.dsv'
+[0.851s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/hook/cmake_prefix_path.sh'
+[0.852s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/lib'
+[0.852s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/bin'
+[0.852s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/lib/pkgconfig/turtlebot4_ignition_toolbox.pc'
+[0.852s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/lib/python3.10/site-packages'
+[0.852s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/bin'
+[0.852s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.ps1'
+[0.853s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.dsv'
+[0.853s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.sh'
+[0.853s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.bash'
+[0.853s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.zsh'
+[0.854s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/colcon-core/packages/turtlebot4_ignition_toolbox)
+[0.875s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_ignition_toolbox)
+[0.875s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox' for CMake module files
+[0.875s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox' for CMake config files
+[0.875s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_ignition_toolbox', 'cmake_prefix_path')
+[0.876s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/hook/cmake_prefix_path.ps1'
+[0.876s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/hook/cmake_prefix_path.dsv'
+[0.876s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/hook/cmake_prefix_path.sh'
+[0.876s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/lib'
+[0.876s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/bin'
+[0.877s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/lib/pkgconfig/turtlebot4_ignition_toolbox.pc'
+[0.877s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/lib/python3.10/site-packages'
+[0.877s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/bin'
+[0.877s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.ps1'
+[0.877s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.dsv'
+[0.878s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.sh'
+[0.878s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.bash'
+[0.878s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/turtlebot4_ignition_toolbox/package.zsh'
+[0.878s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox/share/colcon-core/packages/turtlebot4_ignition_toolbox)
+[0.879s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ollie/ros2_ws/src/turtlebot4_ignition_bringup' with build type 'ament_cmake'
+[0.879s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ollie/ros2_ws/src/turtlebot4_ignition_bringup'
+[0.879s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.879s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.901s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup': CMAKE_PREFIX_PATH=/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox:/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins:/home/ollie/ros2_ws/install/turtlebot4_simulator:/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --build /home/ollie/ros2_ws/build/turtlebot4_ignition_bringup -- -j16 -l16
+[0.933s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup' returned '0': CMAKE_PREFIX_PATH=/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox:/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins:/home/ollie/ros2_ws/install/turtlebot4_simulator:/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --build /home/ollie/ros2_ws/build/turtlebot4_ignition_bringup -- -j16 -l16
+[0.950s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup': CMAKE_PREFIX_PATH=/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox:/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins:/home/ollie/ros2_ws/install/turtlebot4_simulator:/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --install /home/ollie/ros2_ws/build/turtlebot4_ignition_bringup
+[0.968s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_ignition_bringup)
+[0.969s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup' for CMake module files
+[0.969s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup' returned '0': CMAKE_PREFIX_PATH=/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox:/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins:/home/ollie/ros2_ws/install/turtlebot4_simulator:/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --install /home/ollie/ros2_ws/build/turtlebot4_ignition_bringup
+[0.969s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup' for CMake config files
+[0.970s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_ignition_bringup', 'cmake_prefix_path')
+[0.970s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/hook/cmake_prefix_path.ps1'
+[0.970s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/hook/cmake_prefix_path.dsv'
+[0.971s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/hook/cmake_prefix_path.sh'
+[0.971s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/bin'
+[0.971s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/lib/pkgconfig/turtlebot4_ignition_bringup.pc'
+[0.971s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/lib/python3.10/site-packages'
+[0.971s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/bin'
+[0.971s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.ps1'
+[0.972s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.dsv'
+[0.972s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.sh'
+[0.972s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.bash'
+[0.972s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.zsh'
+[0.973s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/colcon-core/packages/turtlebot4_ignition_bringup)
+[0.989s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_ignition_bringup)
+[0.989s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup' for CMake module files
+[0.990s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup' for CMake config files
+[0.990s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_ignition_bringup', 'cmake_prefix_path')
+[0.990s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/hook/cmake_prefix_path.ps1'
+[0.990s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/hook/cmake_prefix_path.dsv'
+[0.990s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/hook/cmake_prefix_path.sh'
+[0.991s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/bin'
+[0.991s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/lib/pkgconfig/turtlebot4_ignition_bringup.pc'
+[0.991s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/lib/python3.10/site-packages'
+[0.991s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/bin'
+[0.991s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.ps1'
+[0.992s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.dsv'
+[0.992s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.sh'
+[0.992s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.bash'
+[0.992s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/turtlebot4_ignition_bringup/package.zsh'
+[0.993s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup/share/colcon-core/packages/turtlebot4_ignition_bringup)
+[0.993s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ollie/ros2_ws/src/turtlebot4_simulator' with build type 'ament_cmake'
+[0.993s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ollie/ros2_ws/src/turtlebot4_simulator'
+[0.993s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.993s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.008s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery': PYTHONPATH=/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/prefix_override:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/build --no-deps symlink_data
+[1.023s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ollie/ros2_ws/build/turtlebot4_simulator': CMAKE_PREFIX_PATH=/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup:/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox:/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins:/home/ollie/ros2_ws/install/turtlebot4_simulator:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --build /home/ollie/ros2_ws/build/turtlebot4_simulator -- -j16 -l16
+[1.056s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ollie/ros2_ws/build/turtlebot4_simulator' returned '0': CMAKE_PREFIX_PATH=/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup:/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox:/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins:/home/ollie/ros2_ws/install/turtlebot4_simulator:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --build /home/ollie/ros2_ws/build/turtlebot4_simulator -- -j16 -l16
+[1.074s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ollie/ros2_ws/build/turtlebot4_simulator': CMAKE_PREFIX_PATH=/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup:/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox:/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins:/home/ollie/ros2_ws/install/turtlebot4_simulator:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --install /home/ollie/ros2_ws/build/turtlebot4_simulator
+[1.092s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_simulator)
+[1.092s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_simulator' for CMake module files
+[1.092s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ollie/ros2_ws/build/turtlebot4_simulator' returned '0': CMAKE_PREFIX_PATH=/home/ollie/ros2_ws/install/turtlebot4_ignition_bringup:/home/ollie/ros2_ws/install/turtlebot4_ignition_toolbox:/home/ollie/ros2_ws/install/turtlebot4_ignition_gui_plugins:/home/ollie/ros2_ws/install/turtlebot4_simulator:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery:/opt/ros/humble /usr/bin/cmake --install /home/ollie/ros2_ws/build/turtlebot4_simulator
+[1.093s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_simulator' for CMake config files
+[1.093s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_simulator', 'cmake_prefix_path')
+[1.093s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/hook/cmake_prefix_path.ps1'
+[1.094s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/hook/cmake_prefix_path.dsv'
+[1.094s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/hook/cmake_prefix_path.sh'
+[1.094s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_simulator/bin'
+[1.095s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_simulator/lib/pkgconfig/turtlebot4_simulator.pc'
+[1.095s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_simulator/lib/python3.10/site-packages'
+[1.095s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_simulator/bin'
+[1.095s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.ps1'
+[1.095s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.dsv'
+[1.095s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.sh'
+[1.096s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.bash'
+[1.096s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.zsh'
+[1.096s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ollie/ros2_ws/install/turtlebot4_simulator/share/colcon-core/packages/turtlebot4_simulator)
+[1.112s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(turtlebot4_simulator)
+[1.113s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_simulator' for CMake module files
+[1.113s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_simulator' for CMake config files
+[1.113s] Level 1:colcon.colcon_core.shell:create_environment_hook('turtlebot4_simulator', 'cmake_prefix_path')
+[1.113s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/hook/cmake_prefix_path.ps1'
+[1.113s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/hook/cmake_prefix_path.dsv'
+[1.114s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/hook/cmake_prefix_path.sh'
+[1.114s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_simulator/bin'
+[1.114s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_simulator/lib/pkgconfig/turtlebot4_simulator.pc'
+[1.114s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_simulator/lib/python3.10/site-packages'
+[1.114s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/turtlebot4_simulator/bin'
+[1.114s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.ps1'
+[1.115s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.dsv'
+[1.115s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.sh'
+[1.115s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.bash'
+[1.116s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/turtlebot4_simulator/share/turtlebot4_simulator/package.zsh'
+[1.116s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ollie/ros2_ws/install/turtlebot4_simulator/share/colcon-core/packages/turtlebot4_simulator)
+[1.326s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_vacuum_auto_recovery', 'pythonpath_develop')
+[1.326s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/hook/pythonpath_develop.ps1'
+[1.326s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery' returned '0': PYTHONPATH=/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/prefix_override:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/build --no-deps symlink_data
+[1.327s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/hook/pythonpath_develop.dsv'
+[1.327s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/hook/pythonpath_develop.sh'
+[1.328s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery' for CMake module files
+[1.328s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery' for CMake config files
+[1.329s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib'
+[1.329s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/bin'
+[1.329s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/pkgconfig/robot_vacuum_auto_recovery.pc'
+[1.330s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages'
+[1.330s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_vacuum_auto_recovery', 'pythonpath')
+[1.330s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/hook/pythonpath.ps1'
+[1.330s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/hook/pythonpath.dsv'
+[1.330s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/hook/pythonpath.sh'
+[1.331s] Level 1:colcon.colcon_core.environment:checking '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/bin'
+[1.331s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_vacuum_auto_recovery)
+[1.331s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/package.ps1'
+[1.331s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/package.dsv'
+[1.332s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/package.sh'
+[1.332s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/package.bash'
+[1.332s] INFO:colcon.colcon_core.shell:Creating package script '/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery/package.zsh'
+[1.332s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/colcon-core/packages/robot_vacuum_auto_recovery)
+[1.332s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.333s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.333s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.333s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.344s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.344s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.344s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.353s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.353s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ollie/ros2_ws/install/local_setup.ps1'
+[1.353s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ollie/ros2_ws/install/_local_setup_util_ps1.py'
+[1.354s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ollie/ros2_ws/install/setup.ps1'
+[1.355s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ollie/ros2_ws/install/local_setup.sh'
+[1.355s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ollie/ros2_ws/install/_local_setup_util_sh.py'
+[1.356s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ollie/ros2_ws/install/setup.sh'
+[1.356s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ollie/ros2_ws/install/local_setup.bash'
+[1.357s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ollie/ros2_ws/install/setup.bash'
+[1.357s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ollie/ros2_ws/install/local_setup.zsh'
+[1.358s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ollie/ros2_ws/install/setup.zsh'

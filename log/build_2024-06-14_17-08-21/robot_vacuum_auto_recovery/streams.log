@@ -1,0 +1,19 @@
+[0.415s] Invoking command in '/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery': PYTHONPATH=/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/prefix_override:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/build --no-deps symlink_data
+[0.587s] running develop
+[0.587s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[0.587s]   warnings.warn(
+[0.698s] running egg_info
+[0.698s] writing robot_vacuum_auto_recovery.egg-info/PKG-INFO
+[0.698s] writing dependency_links to robot_vacuum_auto_recovery.egg-info/dependency_links.txt
+[0.699s] writing entry points to robot_vacuum_auto_recovery.egg-info/entry_points.txt
+[0.699s] writing requirements to robot_vacuum_auto_recovery.egg-info/requires.txt
+[0.699s] writing top-level names to robot_vacuum_auto_recovery.egg-info/top_level.txt
+[0.700s] reading manifest file 'robot_vacuum_auto_recovery.egg-info/SOURCES.txt'
+[0.700s] writing manifest file 'robot_vacuum_auto_recovery.egg-info/SOURCES.txt'
+[0.701s] running build_ext
+[0.701s] Creating /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages/robot-vacuum-auto-recovery.egg-link (link to .)
+[0.701s] Installing button_press script to /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/robot_vacuum_auto_recovery
+[0.702s] 
+[0.702s] Installed /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery
+[0.702s] running symlink_data
+[0.717s] Invoked command in '/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery' returned '0': PYTHONPATH=/home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/prefix_override:/home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/build --no-deps symlink_data

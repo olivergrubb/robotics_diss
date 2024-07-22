@@ -1,0 +1,4 @@
+Invoking command in '/home/ollie/ros2_ws/build/action_interfaces': /usr/bin/cmake --build /home/ollie/ros2_ws/build/action_interfaces -- -j16 -l16
+Invoked command in '/home/ollie/ros2_ws/build/action_interfaces' returned '0': /usr/bin/cmake --build /home/ollie/ros2_ws/build/action_interfaces -- -j16 -l16
+Invoking command in '/home/ollie/ros2_ws/build/action_interfaces': /usr/bin/cmake --install /home/ollie/ros2_ws/build/action_interfaces
+Invoked command in '/home/ollie/ros2_ws/build/action_interfaces' returned '0': /usr/bin/cmake --install /home/ollie/ros2_ws/build/action_interfaces

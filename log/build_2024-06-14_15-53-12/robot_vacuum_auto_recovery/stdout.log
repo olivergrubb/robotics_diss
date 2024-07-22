@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing robot_vacuum_auto_recovery.egg-info/PKG-INFO
+writing dependency_links to robot_vacuum_auto_recovery.egg-info/dependency_links.txt
+writing entry points to robot_vacuum_auto_recovery.egg-info/entry_points.txt
+writing requirements to robot_vacuum_auto_recovery.egg-info/requires.txt
+writing top-level names to robot_vacuum_auto_recovery.egg-info/top_level.txt
+reading manifest file 'robot_vacuum_auto_recovery.egg-info/SOURCES.txt'
+writing manifest file 'robot_vacuum_auto_recovery.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/python3.10/site-packages/robot-vacuum-auto-recovery.egg-link (link to .)
+Installing button_press script to /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/lib/robot_vacuum_auto_recovery
+
+Installed /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery
+running symlink_data
+symbolically linking /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/resource/robot_vacuum_auto_recovery -> /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/ament_index/resource_index/packages
+symbolically linking /home/ollie/ros2_ws/build/robot_vacuum_auto_recovery/package.xml -> /home/ollie/ros2_ws/install/robot_vacuum_auto_recovery/share/robot_vacuum_auto_recovery

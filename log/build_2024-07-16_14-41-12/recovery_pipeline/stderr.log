@@ -1,0 +1,5 @@
+  File "/home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/perpendicular_alignment_to_doorway_and_speed.py", line 13
+    self.execute_recovery_tree_client = ActionClient(self, , 'execute_recovery_tree')
+                                                           ^
+SyntaxError: invalid syntax
+

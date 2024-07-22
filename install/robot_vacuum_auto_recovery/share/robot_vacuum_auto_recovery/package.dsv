@@ -1,0 +1,6 @@
+source;share/robot_vacuum_auto_recovery/hook/pythonpath.ps1
+source;share/robot_vacuum_auto_recovery/hook/pythonpath.dsv
+source;share/robot_vacuum_auto_recovery/hook/pythonpath.sh
+source;share/robot_vacuum_auto_recovery/hook/ament_prefix_path.ps1
+source;share/robot_vacuum_auto_recovery/hook/ament_prefix_path.dsv
+source;share/robot_vacuum_auto_recovery/hook/ament_prefix_path.sh

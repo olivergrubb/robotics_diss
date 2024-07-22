@@ -1,0 +1,22 @@
+[0.550s] Invoking command in '/home/ollie/ros2_ws/src/behavior_trees': PYTHONPATH=/home/ollie/ros2_ws/build/behavior_trees/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ollie/ros2_ws/install/behavior_trees/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/behavior_trees build --build-base /home/ollie/ros2_ws/build/behavior_trees/build install --record /home/ollie/ros2_ws/build/behavior_trees/install.log --single-version-externally-managed install_data
+[0.685s] running egg_info
+[0.685s] writing ../../build/behavior_trees/behavior_trees.egg-info/PKG-INFO
+[0.686s] writing dependency_links to ../../build/behavior_trees/behavior_trees.egg-info/dependency_links.txt
+[0.686s] writing entry points to ../../build/behavior_trees/behavior_trees.egg-info/entry_points.txt
+[0.686s] writing requirements to ../../build/behavior_trees/behavior_trees.egg-info/requires.txt
+[0.686s] writing top-level names to ../../build/behavior_trees/behavior_trees.egg-info/top_level.txt
+[0.687s] reading manifest file '../../build/behavior_trees/behavior_trees.egg-info/SOURCES.txt'
+[0.688s] writing manifest file '../../build/behavior_trees/behavior_trees.egg-info/SOURCES.txt'
+[0.688s] running build
+[0.688s] running build_py
+[0.689s] running install
+[0.689s] running install_lib
+[0.690s] running install_data
+[0.690s] running install_egg_info
+[0.691s] removing '/home/ollie/ros2_ws/install/behavior_trees/lib/python3.10/site-packages/behavior_trees-0.0.0-py3.10.egg-info' (and everything under it)
+[0.691s] Copying ../../build/behavior_trees/behavior_trees.egg-info to /home/ollie/ros2_ws/install/behavior_trees/lib/python3.10/site-packages/behavior_trees-0.0.0-py3.10.egg-info
+[0.692s] running install_scripts
+[0.706s] Installing test_behavior script to /home/ollie/ros2_ws/install/behavior_trees/lib/behavior_trees
+[0.706s] Installing vacuum_planner script to /home/ollie/ros2_ws/install/behavior_trees/lib/behavior_trees
+[0.707s] writing list of installed files to '/home/ollie/ros2_ws/build/behavior_trees/install.log'
+[0.723s] Invoked command in '/home/ollie/ros2_ws/src/behavior_trees' returned '0': PYTHONPATH=/home/ollie/ros2_ws/build/behavior_trees/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ollie/ros2_ws/install/behavior_trees/lib/python3.10/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/behavior_trees build --build-base /home/ollie/ros2_ws/build/behavior_trees/build install --record /home/ollie/ros2_ws/build/behavior_trees/install.log --single-version-externally-managed install_data

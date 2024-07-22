@@ -1,0 +1,66 @@
+[0.478s] Invoking command in '/home/ollie/ros2_ws_2/src/behavior_trees': PYTHONPATH=/home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/prefix_override:/home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/behavior_trees build --build-base /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build install --record /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/install.log --single-version-externally-managed install_data
+[0.636s] running egg_info
+[0.636s] creating build/behavior_trees/behavior_trees.egg-info
+[0.637s] writing build/behavior_trees/behavior_trees.egg-info/PKG-INFO
+[0.637s] writing dependency_links to build/behavior_trees/behavior_trees.egg-info/dependency_links.txt
+[0.637s] writing entry points to build/behavior_trees/behavior_trees.egg-info/entry_points.txt
+[0.637s] writing requirements to build/behavior_trees/behavior_trees.egg-info/requires.txt
+[0.637s] writing top-level names to build/behavior_trees/behavior_trees.egg-info/top_level.txt
+[0.637s] writing manifest file 'build/behavior_trees/behavior_trees.egg-info/SOURCES.txt'
+[0.638s] reading manifest file 'build/behavior_trees/behavior_trees.egg-info/SOURCES.txt'
+[0.639s] writing manifest file 'build/behavior_trees/behavior_trees.egg-info/SOURCES.txt'
+[0.639s] running build
+[0.639s] running build_py
+[0.639s] creating /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build
+[0.639s] creating /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib
+[0.639s] creating /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees
+[0.639s] copying behavior_trees/__init__.py -> /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees
+[0.639s] creating /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/trees
+[0.639s] copying behavior_trees/trees/__init__.py -> /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/trees
+[0.639s] copying behavior_trees/trees/vacuum_planner.py -> /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/trees
+[0.664s] copying behavior_trees/trees/test_tree.py -> /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/trees
+[0.677s] creating /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/behaviors
+[0.677s] copying behavior_trees/behaviors/face_closest_obs.py -> /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/behaviors
+[0.677s] copying behavior_trees/behaviors/__init__.py -> /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/behaviors
+[0.678s] copying behavior_trees/behaviors/rotate_relative_to_obs.py -> /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/behaviors
+[0.678s] copying behavior_trees/behaviors/follow_wall.py -> /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/behaviors
+[0.678s] copying behavior_trees/behaviors/move_forward.py -> /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/behaviors
+[0.678s] copying behavior_trees/behaviors/move_towards_obs.py -> /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/behaviors
+[0.678s] running install
+[0.678s] running install_lib
+[0.679s] creating /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees
+[0.679s] copying /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/__init__.py -> /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees
+[0.679s] creating /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/trees
+[0.679s] copying /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/trees/__init__.py -> /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/trees
+[0.679s] copying /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/trees/vacuum_planner.py -> /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/trees
+[0.679s] copying /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/trees/test_tree.py -> /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/trees
+[0.679s] creating /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/behaviors
+[0.679s] copying /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/behaviors/face_closest_obs.py -> /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/behaviors
+[0.679s] copying /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/behaviors/__init__.py -> /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/behaviors
+[0.679s] copying /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/behaviors/rotate_relative_to_obs.py -> /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/behaviors
+[0.679s] copying /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/behaviors/follow_wall.py -> /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/behaviors
+[0.679s] copying /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/behaviors/move_forward.py -> /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/behaviors
+[0.679s] copying /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build/lib/behavior_trees/behaviors/move_towards_obs.py -> /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/behaviors
+[0.680s] byte-compiling /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/__init__.py to __init__.cpython-310.pyc
+[0.680s] byte-compiling /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/trees/__init__.py to __init__.cpython-310.pyc
+[0.680s] byte-compiling /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/trees/vacuum_planner.py to vacuum_planner.cpython-310.pyc
+[0.680s] byte-compiling /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/trees/test_tree.py to test_tree.cpython-310.pyc
+[0.681s] byte-compiling /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/behaviors/face_closest_obs.py to face_closest_obs.cpython-310.pyc
+[0.681s] byte-compiling /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/behaviors/__init__.py to __init__.cpython-310.pyc
+[0.681s] byte-compiling /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/behaviors/rotate_relative_to_obs.py to rotate_relative_to_obs.cpython-310.pyc
+[0.681s] byte-compiling /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/behaviors/follow_wall.py to follow_wall.cpython-310.pyc
+[0.682s] byte-compiling /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/behaviors/move_forward.py to move_forward.cpython-310.pyc
+[0.682s] byte-compiling /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees/behaviors/move_towards_obs.py to move_towards_obs.cpython-310.pyc
+[0.683s] running install_data
+[0.683s] creating /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/share/ament_index
+[0.683s] creating /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/share/ament_index/resource_index
+[0.683s] creating /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/share/ament_index/resource_index/packages
+[0.683s] copying resource/behavior_trees -> /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/share/ament_index/resource_index/packages
+[0.683s] copying package.xml -> /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/share/behavior_trees
+[0.683s] running install_egg_info
+[0.684s] Copying build/behavior_trees/behavior_trees.egg-info to /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages/behavior_trees-0.0.0-py3.10.egg-info
+[0.684s] running install_scripts
+[0.696s] Installing test_behavior script to /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/behavior_trees
+[0.696s] Installing vacuum_planner script to /home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/behavior_trees
+[0.696s] writing list of installed files to '/home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/install.log'
+[0.708s] Invoked command in '/home/ollie/ros2_ws_2/src/behavior_trees' returned '0': PYTHONPATH=/home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/prefix_override:/home/ollie/ros2_ws_2/src/behavior_trees/install/behavior_trees/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/behavior_trees build --build-base /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/build install --record /home/ollie/ros2_ws_2/src/behavior_trees/build/behavior_trees/install.log --single-version-externally-managed install_data

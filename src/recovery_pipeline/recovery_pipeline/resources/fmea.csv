@@ -1,0 +1,7 @@
+Abnormal_Skill,Affected_Subsystem,Cause,Solution
+navigate,environment_issue,doorway_boundary,BT: perpendicular_alignment_to_doorway_and_speed
+navigate,drive_issue,wheels_off_ground,MANUAL: place_robot_upright
+navigate,environment_issue,shear_cliff,BT: retreat_navigate_around
+navigate,environment_issue,small_surface_change,BT: perpendicular_alignment_and_speed
+check_progress,drive_issue,wheel_slippage,BT: retreat_navigate_around
+navigate,environment_issue,semi_static_object,MANUAL: remove_object
