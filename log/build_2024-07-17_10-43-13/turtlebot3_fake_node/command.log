@@ -1,4 +1,0 @@
-Invoking command in '/home/ollie/ros2_ws/build/turtlebot3_fake_node': /usr/bin/cmake --build /home/ollie/ros2_ws/build/turtlebot3_fake_node -- -j16 -l16
-Invoked command in '/home/ollie/ros2_ws/build/turtlebot3_fake_node' returned '0': /usr/bin/cmake --build /home/ollie/ros2_ws/build/turtlebot3_fake_node -- -j16 -l16
-Invoking command in '/home/ollie/ros2_ws/build/turtlebot3_fake_node': /usr/bin/cmake --install /home/ollie/ros2_ws/build/turtlebot3_fake_node
-Invoked command in '/home/ollie/ros2_ws/build/turtlebot3_fake_node' returned '0': /usr/bin/cmake --install /home/ollie/ros2_ws/build/turtlebot3_fake_node
