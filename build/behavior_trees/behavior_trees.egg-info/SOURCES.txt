@@ -21,6 +21,7 @@ behavior_trees/behaviors/plan_route.py
 behavior_trees/behaviors/process_route.py
 behavior_trees/behaviors/rotate_relative_to_obs.py
 behavior_trees/trees/__init__.py
+behavior_trees/trees/move_cable.py
 behavior_trees/trees/perpendicular_alignment_to_doorway_and_speed.py
 behavior_trees/trees/responder_trees.py
 behavior_trees/trees/test_tree.py

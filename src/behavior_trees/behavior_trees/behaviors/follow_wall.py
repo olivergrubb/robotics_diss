@@ -58,7 +58,6 @@ class FollowWall(py_trees.behaviour.Behaviour):
                 twist.angular.z = 0.0
                 twist.linear.x = 0.0
                 self.in_corner = True
-            # Facing the correct direction - move forward
             
             self.node.get_logger().info("Following wall")        
             self.node.cmd_vel_publisher.publish(twist)
@@ -84,15 +83,12 @@ class FollowWall(py_trees.behaviour.Behaviour):
         current_time = time.time()
         delta_time = current_time - self.previous_time
         
-        # Calculate the distance error
         self.integral_dist += error_dist * delta_time
         derivative_dist = (error_dist - self.previous_error_dist) / delta_time if delta_time > 0 else 0
         
-        # Calculate the angle error (desired angle is typically 0 for parallel alignment)
         self.integral_angle += error_angle * delta_time
         derivative_angle = (error_angle - self.previous_error_angle) / delta_time if delta_time > 0 else 0
         
-        # PID control output
         angular_velocity_dist = (Kp_dist * error_dist + 
                                  Kd_dist * derivative_dist + 
                                  Ki_dist * self.integral_dist)
@@ -101,24 +97,21 @@ class FollowWall(py_trees.behaviour.Behaviour):
                                   Kd_angle * derivative_angle + 
                                   Ki_angle * self.integral_angle)
         
-        # Combine distance and angle control efforts
         angular_velocity = angular_velocity_dist + angular_velocity_angle
         
         if self.wall_side == 'left':
             angular_velocity = -angular_velocity
 
-        # Update previous error and time
         self.previous_error_dist = error_dist
         self.previous_error_angle = error_angle
         self.previous_time = current_time
 
         return angular_velocity
+    
     def calculate_error_angle(self, current_angle, wall_side):
         if wall_side == 'left':
             desired_angle = 90
-            # Calculate error angle
             error_angle = desired_angle - current_angle
-            # Normalize to [-180, 180]
             error_angle = (error_angle + 180) % 360 - 180
 
         elif wall_side == 'right':
@@ -127,8 +120,6 @@ class FollowWall(py_trees.behaviour.Behaviour):
         else:
             raise ValueError("wall_side must be 'left' or 'right'")
 
-
-        # Convert to radians
         error_angle_radians = math.radians(error_angle)
 
         return error_angle_radians

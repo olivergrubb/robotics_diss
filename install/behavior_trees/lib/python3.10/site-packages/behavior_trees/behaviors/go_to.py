@@ -82,25 +82,25 @@ class GoTo(py_trees.behaviour.Behaviour):
     def update_map(self, instruction):
         current_map_location = self.blackboard.get("current_map_location")
         current_map = self.blackboard.get("map")
-
-        if instruction is None:
-            current_map[current_map_location[0]][current_map_location[1]] = 'X'
-
-        elif instruction[0] == "Up":
-            for i in range(int(instruction[1])):
-                current_map[current_map_location[0] - i][current_map_location[1]] = 'X'
+        
+        # Mark the current location as 'X' before moving
+        current_map[current_map_location[0]][current_map_location[1]] = 'X'
+        
+        if instruction[0] == "Up":
+            for i in range(1, int(instruction[1]) + 1):
+                current_map[current_map_location[0] - i][current_map_location[1]] = 'R'
             current_map_location = (current_map_location[0] - int(instruction[1]), current_map_location[1])
         elif instruction[0] == "Down":
-            for i in range(int(instruction[1])):
-                current_map[current_map_location[0] + i][current_map_location[1]] = 'X'
+            for i in range(1, int(instruction[1]) + 1):
+                current_map[current_map_location[0] + i][current_map_location[1]] = 'R'
             current_map_location = (current_map_location[0] + int(instruction[1]), current_map_location[1])
         elif instruction[0] == "Left":
-            for i in range(int(instruction[1])):
-                current_map[current_map_location[0]][current_map_location[1] - i] = 'X'
+            for i in range(1, int(instruction[1]) + 1):
+                current_map[current_map_location[0]][current_map_location[1] - i] = 'R'
             current_map_location = (current_map_location[0], current_map_location[1] - int(instruction[1]))
         elif instruction[0] == "Right":
-            for i in range(int(instruction[1])):
-                current_map[current_map_location[0]][current_map_location[1] + i] = 'X'
+            for i in range(1, int(instruction[1]) + 1):
+                current_map[current_map_location[0]][current_map_location[1] + i] = 'R'
             current_map_location = (current_map_location[0], current_map_location[1] + int(instruction[1]))
         
         self.blackboard.set("current_map_location", current_map_location)

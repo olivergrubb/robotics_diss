@@ -16,8 +16,10 @@ class PlanRoute(py_trees.behaviour.Behaviour):
         self.map_array = pgm_to_binary_2d_array('src/behavior_trees/behavior_trees/resources/altered_map.pgm', 9)
         self.path_instructions = vacuum_path(self.map_array, self.start_location)
         self.encoded_instructions = encode_instructions(self.path_instructions, 1)
+        map = [['□' if cell == 0 else '■' for cell in row] for row in self.map_array]
+        map[self.start_location[0]][self.start_location[1]] = 'R'
         self.blackboard.set("path_instructions", self.encoded_instructions)
-        self.blackboard.set("map", [['□' if cell == 0 else '■' for cell in row] for row in self.map_array])
+        self.blackboard.set("map", map)
 
     def update(self):
         if self.encoded_instructions:
@@ -32,29 +34,22 @@ class PlanRoute(py_trees.behaviour.Behaviour):
 
 
 def pgm_to_binary_2d_array(file_path, tile_size=9):
-    # Load the PGM image
+    
     image = Image.open(file_path)
-    
-    # Convert image to numpy array
     image_array = np.array(image)
-    
-    # Get dimensions of the image
     height, width = image_array.shape
     
-    # Calculate new dimensions for the 2D array
     new_height = height // tile_size
     new_width = width // tile_size
     
-    # Initialize the new 2D array
     binary_array = np.zeros((new_height, new_width), dtype=int)
     
-    # Process each 5x5 block
     for i in range(new_height):
         for j in range(new_width):
-            # Define the block
+            # Look at a tile_size x tile_size block of pixels in the original image
             block = image_array[i*tile_size:(i+1)*tile_size, j*tile_size:(j+1)*tile_size]
             
-            # Check if the block contains only white pixels (255 for PGM)
+            # Mark blocks with all pixels close to white as free space, otherwise as obstacles
             if np.all(block > 250):
                 binary_array[i, j] = 0
             else:
@@ -63,6 +58,7 @@ def pgm_to_binary_2d_array(file_path, tile_size=9):
     return binary_array
 
 def vacuum_path(map_array, start):
+
     if start[0] >= len(map_array) or start[1] >= len(map_array[0]):
         raise ValueError("Start position is out of bounds")
     if start[0] < 0 or start[1] < 0:
@@ -74,6 +70,7 @@ def vacuum_path(map_array, start):
     visited = set()
     path = []
     
+    # Directions relative to map array where (0, 0) is the top-left corner and is indexed by (row, col)
     directions = [("Up", -1, 0), ("Right", 0, 1), ("Down", 1, 0), ("Left", 0, -1)]
     
     def is_valid(x, y):
@@ -97,7 +94,7 @@ def vacuum_path(map_array, start):
                     queue.append((nx, ny, new_path))
         return local_path
 
-    # Update the main cleaning algorithm to use the new bfs function
+    # Main planning loop
     current_x, current_y = start
     while True:
         local_path = bfs(current_x, current_y)
@@ -121,7 +118,7 @@ def vacuum_path(map_array, start):
             break
         
         target = min(unvisited, key=lambda p: abs(p[0]-current_x) + abs(p[1]-current_y))
-        path_to_target = navigate_to(current_x, current_y, target[0], target[1], map_array, visited)
+        path_to_target = navigate_to(current_x, current_y, target[0], target[1], map_array)
         path.extend(path_to_target)
         
         # Update current position
@@ -131,12 +128,12 @@ def vacuum_path(map_array, start):
             current_y += dy
     
     # Return to start
-    path_to_start = navigate_to(current_x, current_y, start[0], start[1], map_array, visited)
+    path_to_start = navigate_to(current_x, current_y, start[0], start[1], map_array)
     path.extend(path_to_start)
     
     return path
 
-def navigate_to(start_x, start_y, end_x, end_y, map_array, global_visited):
+def navigate_to(start_x, start_y, end_x, end_y, map_array):
     rows, cols = len(map_array), len(map_array[0])
     queue = deque([(start_x, start_y, [])])
     local_visited = set()
@@ -160,6 +157,8 @@ def navigate_to(start_x, start_y, end_x, end_y, map_array, global_visited):
     
     return []  # This should never happen if the map is fully connected
 
+# Instruction limit is used to group identical instructions. I.e. if the robot moves forward 3 times, it will be encoded as ("Up", 3). Set to 1
+# to encode each individual instruction separately because if error is detected it's most recent successful navigation will at max be 1 grid cell away
 def encode_instructions(path_instructions, instruction_limit=1):
     if not path_instructions:
         return []
@@ -184,10 +183,8 @@ def encode_instructions(path_instructions, instruction_limit=1):
 def visualize_path(map_array, start, instructions):
     rows, cols = len(map_array), len(map_array[0])
     
-    # Create a copy of the map for visualization
     visual_map = [['□' if cell == 0 else '■' for cell in row] for row in map_array]
     
-    # Define movement directions
     moves = {
         'Up': (-1, 0),
         'Down': (1, 0),
@@ -195,27 +192,21 @@ def visualize_path(map_array, start, instructions):
         'Right': (0, 1)
     }
     
-    # Initialize current position
     x, y = start
-    
-    # Mark start position
     visual_map[x][y] = 'S'
-    
-    # Follow instructions and mark path
+
     for i, instruction in enumerate(instructions):
         dx, dy = moves[instruction]
         x, y = x + dx, y + dy
         
-        # Check if position is valid
         if 0 <= x < rows and 0 <= y < cols:
             if visual_map[x][y] == '□':
-                visual_map[x][y] = str(i % 10)  # Use modulo to cycle through single digits
+                visual_map[x][y] = str(i % 10)
             elif visual_map[x][y] == 'S':
-                visual_map[x][y] = 'E'  # Mark end position if it's the same as start
+                visual_map[x][y] = 'E'
         else:
             print(f"Warning: Instruction {i} ({instruction}) leads out of bounds")
     
-    # Print the visualized map
     for row in visual_map:
         print(' '.join(row))
     
@@ -227,13 +218,16 @@ def visualize_path(map_array, start, instructions):
     print("0-9: Path taken (cyclic)")
 
 if __name__ == '__main__':
-    map = [
+    # Uncomment for easier testing
+    """ map = [
         [0, 1, 0, 0, 0],
         [0, 1, 1, 1, 0],
         [0, 0, 0, 1, 0],
         [1, 1, 0, 1, 0],
         [0, 0, 0, 0, 0]
-    ]
+    ] """
+
+    # Tile size set to 9 - same as in main vacuum behavior tree
     map = pgm_to_binary_2d_array('src/behavior_trees/behavior_trees/resources/altered_map.pgm', 9)
     for row in map:
         for cell in row:

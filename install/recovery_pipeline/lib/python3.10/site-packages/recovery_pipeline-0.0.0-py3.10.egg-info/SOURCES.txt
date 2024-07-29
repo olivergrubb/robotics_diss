@@ -17,6 +17,7 @@ recovery_pipeline/error_detectors/error_detectors.py
 recovery_pipeline/error_detectors/wheels_off_ground.py
 recovery_pipeline/error_responders/__init__.py
 recovery_pipeline/error_responders/error_responders.py
+recovery_pipeline/error_responders/move_cable.py
 recovery_pipeline/error_responders/perpendicular_alignment_to_doorway_and_speed.py
 recovery_pipeline/error_responders/place_robot_upright.py
 recovery_pipeline/resources/__init__.py

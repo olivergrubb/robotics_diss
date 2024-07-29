@@ -1,6 +1,4 @@
-from behavior_trees.behaviors.go_to import GoTo
-from behavior_trees.behaviors.process_route import ProcessRoute
-from behavior_trees.behaviors.check_if_finished import CheckIfFinished
+from behavior_trees.behaviors.behaviors import ProcessRoute, CheckIfFinished, GoTo
 import py_trees
 from py_trees import composites
 import rclpy

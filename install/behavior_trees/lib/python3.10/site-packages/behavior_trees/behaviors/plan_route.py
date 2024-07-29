@@ -16,8 +16,10 @@ class PlanRoute(py_trees.behaviour.Behaviour):
         self.map_array = pgm_to_binary_2d_array('src/behavior_trees/behavior_trees/resources/altered_map.pgm', 9)
         self.path_instructions = vacuum_path(self.map_array, self.start_location)
         self.encoded_instructions = encode_instructions(self.path_instructions, 1)
+        map = [['□' if cell == 0 else '■' for cell in row] for row in self.map_array]
+        map[self.start_location[0]][self.start_location[1]] = 'R'
         self.blackboard.set("path_instructions", self.encoded_instructions)
-        self.blackboard.set("map", [['□' if cell == 0 else '■' for cell in row] for row in self.map_array])
+        self.blackboard.set("map", map)
 
     def update(self):
         if self.encoded_instructions:

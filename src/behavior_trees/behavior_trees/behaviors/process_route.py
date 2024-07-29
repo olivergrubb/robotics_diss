@@ -1,6 +1,5 @@
 import py_trees
 import math
-import re
 from geometry_msgs.msg import Quaternion, PoseStamped
 
 class ProcessRoute(py_trees.behaviour.Behaviour):
@@ -14,7 +13,6 @@ class ProcessRoute(py_trees.behaviour.Behaviour):
     def initialise(self):
         self.current_pose = self.blackboard.get("current_pose")
         instructions = self.blackboard.get("path_instructions")
-        self.node.get_logger().info(f"Instructions left {len(instructions)}")
         self.current_instruction = instructions.pop(0)
         self.blackboard.set("current_instruction", self.current_instruction)
         self.node.get_logger().info(f"Processing instruction: {self.current_instruction}")
@@ -23,7 +21,6 @@ class ProcessRoute(py_trees.behaviour.Behaviour):
         if self.current_instruction:
             required_pose = self.instruction_to_pose(self.current_instruction)
             self.blackboard.set("required_pose", required_pose)
-            current_pose = self.blackboard.get("current_pose")
             return py_trees.common.Status.SUCCESS
         else:
             self.node.get_logger().info("Failed to process route")

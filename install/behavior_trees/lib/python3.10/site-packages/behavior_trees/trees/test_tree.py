@@ -183,6 +183,7 @@ def create_blackboard_msg(blackboard):
     required_pose = blackboard.get("required_pose")
     path_instructions = blackboard.get("path_instructions")
     map_data = blackboard.get("map")
+    current_instruction = blackboard.get("current_instruction")
 
     blackboard = {
         "current_map_location": current_map_location,
@@ -190,7 +191,8 @@ def create_blackboard_msg(blackboard):
         "current_pose": str(current_pose),
         "required_pose": str(required_pose),
         "path_instructions": path_instructions,
-        "map": map_data
+        "map": map_data,
+        "current_instruction": current_instruction
     }
     
     return blackboard

@@ -12,7 +12,7 @@ class CheckIfFinished(py_trees.behaviour.Behaviour):
 
     def update(self):
         instructions = self.blackboard.get("path_instructions")
-        self.node.get_logger().info(f"number of instructions left {len(instructions)}")
+        self.node.get_logger().info(f"Number of instructions left {len(instructions)}")
         if len(instructions) == 0:
             # Must be fail to break out of execution loop
             return py_trees.common.Status.FAILURE

@@ -10,6 +10,7 @@
 /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detectors/doorway_boundary.py
 /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detectors/error_detectors.py
 /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/__init__.py
+/home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/move_cable.py
 /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/perpendicular_alignment_to_doorway_and_speed.py
 /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/error_responders.py
 /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/place_robot_upright.py
@@ -25,6 +26,7 @@
 /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detectors/__pycache__/doorway_boundary.cpython-310.pyc
 /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_detectors/__pycache__/error_detectors.cpython-310.pyc
 /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/__pycache__/__init__.cpython-310.pyc
+/home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/__pycache__/move_cable.cpython-310.pyc
 /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/__pycache__/perpendicular_alignment_to_doorway_and_speed.cpython-310.pyc
 /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/__pycache__/error_responders.cpython-310.pyc
 /home/ollie/ros2_ws/install/recovery_pipeline/lib/python3.10/site-packages/recovery_pipeline/error_responders/__pycache__/place_robot_upright.cpython-310.pyc

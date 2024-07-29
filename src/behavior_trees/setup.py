@@ -14,12 +14,12 @@ setup(
     install_requires=['setuptools', 'py-trees', 'py-trees-ros', 'py-trees-ros-interfaces', 'rclpy', 'numpy', 'math'],
     zip_safe=True,
     maintainer='ollie',
-    maintainer_email='ollie@todo.todo',
+    maintainer_email='oliver.grubb@hotmail.com',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': ['test_behavior = behavior_trees.trees.test_tree:main', 'vacuum_planner = behavior_trees.trees.vacuum_planner:main'
+        'console_scripts': ['vacuum_planner = behavior_trees.trees.vacuum_planner:main'
         ],
     },
 )
