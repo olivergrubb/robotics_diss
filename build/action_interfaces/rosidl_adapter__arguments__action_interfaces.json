@@ -1,6 +1,0 @@
-{
-  "package_name": "action_interfaces",
-  "non_idl_tuples": [
-    "/home/ollie/ros2_ws/src/action_interfaces:action/ExecuteRecoveryTree.action"
-  ]
-}

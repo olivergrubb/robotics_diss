@@ -1,9 +1,0 @@
-/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup/CMakeFiles/uninstall.dir
-/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup/CMakeFiles/turtlebot4_ignition_bringup_uninstall.dir
-/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup/CMakeFiles/test.dir
-/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup/CMakeFiles/edit_cache.dir
-/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup/CMakeFiles/rebuild_cache.dir
-/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup/CMakeFiles/list_install_components.dir
-/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup/CMakeFiles/install.dir
-/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup/CMakeFiles/install/local.dir
-/home/ollie/ros2_ws/build/turtlebot4_ignition_bringup/CMakeFiles/install/strip.dir
