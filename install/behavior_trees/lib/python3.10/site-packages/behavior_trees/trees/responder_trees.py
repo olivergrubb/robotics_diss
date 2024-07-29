@@ -1,4 +1,0 @@
-from behavior_trees.trees.perpendicular_alignment_to_doorway_and_speed import PerpendicularAlignmentToDoorwayAndSpeed
-from behavior_trees.trees.move_cable import MoveCable
-
-ALL_RESPONDER_TREES = [PerpendicularAlignmentToDoorwayAndSpeed, MoveCable]
