@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo colcon build
+colcon build --symlink-install
 
 source install/setup.bash
 . /usr/share/gazebo/setup.sh
