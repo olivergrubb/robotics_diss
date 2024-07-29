@@ -5,22 +5,31 @@ import py_trees
 
 
 class PlanRoute(py_trees.behaviour.Behaviour):
-    def __init__(self, node, blackboard, start_location, name="Plan Route"):
+    def __init__(self, node, blackboard, start_location, re_plan_flag = False, name="Plan Route"):
         super(PlanRoute, self).__init__(name)
         self.node = node
         self.blackboard = blackboard
         self.start_location = start_location
+        self.re_plan_flag = re_plan_flag
 
     def initialise(self):
         self.node.get_logger().info("Planning Route")
-        self.map_array = pgm_to_binary_2d_array('src/behavior_trees/behavior_trees/resources/altered_map.pgm', 9)
-        self.path_instructions = vacuum_path(self.map_array, self.start_location)
-        self.encoded_instructions = encode_instructions(self.path_instructions, 1)
-        map = [['□' if cell == 0 else '■' for cell in row] for row in self.map_array]
-        map[self.start_location[0]][self.start_location[1]] = 'R'
-        self.blackboard.set("path_instructions", self.encoded_instructions)
-        self.blackboard.set("map", map)
-
+        if not self.re_plan_flag:
+            self.map_array = pgm_to_binary_2d_array('src/behavior_trees/behavior_trees/resources/altered_map.pgm', 9)
+            self.path_instructions = vacuum_path(self.map_array, self.start_location)
+            self.encoded_instructions = encode_instructions(self.path_instructions, 1)
+            map = [['□' if cell == 0 else '■' for cell in row] for row in self.map_array]
+            map[self.start_location[0]][self.start_location[1]] = 'R'
+            self.blackboard.set("path_instructions", self.encoded_instructions)
+            self.blackboard.set("map", map)
+        else:
+            self.map_array = self.blackboard.get("map")
+            self.map_array = [[0 if cell == '□' else 1 for cell in row] for row in self.map_array]
+            self.path_instructions = vacuum_path(self.map_array, self.start_location)
+            self.encoded_instructions = encode_instructions(self.path_instructions, 1)
+            self.blackboard.set("path_instructions", self.encoded_instructions)
+            self.node.get_logger().info(f"ROUTE RE-PLANNED \n {self.encoded_instructions}")
+            
     def update(self):
         if self.encoded_instructions:
             self.node.get_logger().info("Route planned")

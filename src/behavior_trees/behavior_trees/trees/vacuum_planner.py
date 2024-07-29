@@ -70,13 +70,18 @@ class VacuumPlanner(Node):
         self.error_message = msg.data
         if self.error_message == 'responding':
             self.error_state = True
-        else:
+        # When manual intervention is required, no response tree is executed, therefore path instructions remain the same. To ensure
+        # consistancy in the pathing, the previously cancelled instruction needs to be re-added to the path instructions
+        elif self.error_message == 'manual_finished':
             self.error_state = False
             # Reset current instruction
-            path_instructiona = blackboard.get("path_instructions")
+            path_instructions = blackboard.get("path_instructions")
             current_instruction = blackboard.get("current_instruction")
-            path_instructiona.insert(0, current_instruction)
-            blackboard.set("path_instructions", path_instructiona)
+            path_instructions.insert(0, current_instruction)
+            blackboard.set("path_instructions", path_instructions)
+        # Path instructions assumed to have been re-planned and set in blackboard by the error responder tree 
+        else:
+            self.error_state = False
 
     
     def create_blackboard_msg(self, blackboard):

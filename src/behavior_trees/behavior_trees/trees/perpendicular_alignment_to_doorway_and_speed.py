@@ -1,4 +1,4 @@
-from behavior_trees.behaviors.behaviors import ProcessRoute, CheckIfFinished, GoTo
+from behavior_trees.behaviors.behaviors import ProcessRoute, CheckIfFinished, GoTo, PlanRoute
 import py_trees
 from py_trees import composites
 import rclpy
@@ -24,6 +24,7 @@ class PerpendicularAlignmentToDoorwayAndSpeed(Node):
         process_route = ProcessRoute(self, blackboard_state)
         go_to = GoTo(self, blackboard_state)
         check_if_finished = CheckIfFinished(self, blackboard_state)
+        replan_route = PlanRoute(self, blackboard_state, start_location=blackboard_state.get("current_map_location"), re_plan_flag=True)
 
         doorway_recovery.add_children([process_route, go_to, check_if_finished])
 
@@ -35,7 +36,7 @@ class PerpendicularAlignmentToDoorwayAndSpeed(Node):
                 num_success=-1
             )
         )
-        root.add_children([repeat_until_fail])
+        root.add_children([repeat_until_fail, replan_route])
         tree = py_trees.trees.BehaviourTree(root)
         tree.setup()
         
