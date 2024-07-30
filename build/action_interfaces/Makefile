@@ -315,17 +315,17 @@ action_interfaces__rosidl_typesupport_cpp/fast:
 .PHONY : action_interfaces__rosidl_typesupport_cpp/fast
 
 #=============================================================================
-# Target rules for targets named ament_cmake_python_copy_action_interfaces
+# Target rules for targets named ament_cmake_python_symlink_action_interfaces
 
 # Build rule for target.
-ament_cmake_python_copy_action_interfaces: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_action_interfaces
-.PHONY : ament_cmake_python_copy_action_interfaces
+ament_cmake_python_symlink_action_interfaces: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_symlink_action_interfaces
+.PHONY : ament_cmake_python_symlink_action_interfaces
 
 # fast build rule for target.
-ament_cmake_python_copy_action_interfaces/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_action_interfaces.dir/build.make CMakeFiles/ament_cmake_python_copy_action_interfaces.dir/build
-.PHONY : ament_cmake_python_copy_action_interfaces/fast
+ament_cmake_python_symlink_action_interfaces/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_symlink_action_interfaces.dir/build.make CMakeFiles/ament_cmake_python_symlink_action_interfaces.dir/build
+.PHONY : ament_cmake_python_symlink_action_interfaces/fast
 
 #=============================================================================
 # Target rules for targets named ament_cmake_python_build_action_interfaces_egg
@@ -687,7 +687,7 @@ help:
 	@echo "... action_interfaces__py"
 	@echo "... action_interfaces_uninstall"
 	@echo "... ament_cmake_python_build_action_interfaces_egg"
-	@echo "... ament_cmake_python_copy_action_interfaces"
+	@echo "... ament_cmake_python_symlink_action_interfaces"
 	@echo "... uninstall"
 	@echo "... action_interfaces__rosidl_generator_c"
 	@echo "... action_interfaces__rosidl_generator_py"

@@ -1,4 +1,3 @@
 [console_scripts]
-test_behavior = behavior_trees.trees.test_tree:main
 vacuum_planner = behavior_trees.trees.vacuum_planner:main
 

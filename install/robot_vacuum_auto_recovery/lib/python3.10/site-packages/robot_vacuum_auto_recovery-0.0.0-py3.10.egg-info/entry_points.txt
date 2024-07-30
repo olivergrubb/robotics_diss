@@ -1,3 +1,0 @@
-[console_scripts]
-button_press = robot_vacuum_auto_recovery.test_node:main
-

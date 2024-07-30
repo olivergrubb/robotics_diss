@@ -22,13 +22,21 @@ class PlanRoute(py_trees.behaviour.Behaviour):
             map[self.start_location[0]][self.start_location[1]] = 'R'
             self.blackboard.set("path_instructions", self.encoded_instructions)
             self.blackboard.set("map", map)
+            self.node.get_logger().info(f"ROUTE PLANNED \n {visualize_path(self.map_array, self.start_location, self.path_instructions)}")
         else:
             self.map_array = self.blackboard.get("map")
-            self.map_array = [[0 if cell == '□' else 1 for cell in row] for row in self.map_array]
-            self.path_instructions = vacuum_path(self.map_array, self.start_location)
+            visited = set()
+            # Add all visited cells in grid ('X' cells) to visited set
+            for row in range(len(self.map_array)):
+                for col in range(len(self.map_array[0])):
+                    if self.map_array[row][col] == 'X':
+                        visited.add((row, col))
+            self.map_array = [[1 if cell == '■' else 0 for cell in row] for row in self.map_array]
+            self.map_array[self.start_location[0]][self.start_location[1]] = 0
+            self.path_instructions = vacuum_path(self.map_array, self.start_location, visited)
             self.encoded_instructions = encode_instructions(self.path_instructions, 1)
             self.blackboard.set("path_instructions", self.encoded_instructions)
-            self.node.get_logger().info(f"ROUTE RE-PLANNED \n {self.encoded_instructions}")
+            self.node.get_logger().info(f"ROUTE RE-PLANNED \n {visualize_path(self.map_array, self.start_location, self.path_instructions)}")
             
     def update(self):
         if self.encoded_instructions:
@@ -66,80 +74,71 @@ def pgm_to_binary_2d_array(file_path, tile_size=9):
                 
     return binary_array
 
-def vacuum_path(map_array, start):
-
+def vacuum_path(map_array, start, visited=None):
     if start[0] >= len(map_array) or start[1] >= len(map_array[0]):
         raise ValueError("Start position is out of bounds")
     if start[0] < 0 or start[1] < 0:
         raise ValueError("Start position is out of bounds")
     if map_array[start[0]][start[1]] == 1:
         raise ValueError("Start position is on an obstacle")
-    
+
     rows, cols = len(map_array), len(map_array[0])
-    visited = set()
+    visited = set() if visited is None else set(visited)
     path = []
-    
-    # Directions relative to map array where (0, 0) is the top-left corner and is indexed by (row, col)
+
     directions = [("Up", -1, 0), ("Right", 0, 1), ("Down", 1, 0), ("Left", 0, -1)]
-    
+
     def is_valid(x, y):
         return 0 <= x < rows and 0 <= y < cols and map_array[x][y] == 0
-    
+
     def bfs(start_x, start_y):
         queue = deque([(start_x, start_y, [])])
         local_visited = set()
         while queue:
             x, y, local_path = queue.popleft()
-            if (x, y) in visited:
+            if (x, y) in visited or (x, y) in local_visited:
                 continue
-            visited.add((x, y))
             local_visited.add((x, y))
+            visited.add((x, y))
+            for direction, dx, dy in directions:
+                nx, ny = x + dx, y + dy
+                if is_valid(nx, ny) and (nx, ny) not in visited and (nx, ny) not in local_visited:
+                    return local_path + [direction], (nx, ny)
             for direction, dx, dy in directions:
                 nx, ny = x + dx, y + dy
                 if is_valid(nx, ny) and (nx, ny) not in local_visited:
-                    new_path = local_path + [direction]
-                    if (nx, ny) not in visited:
-                        return new_path
-                    queue.append((nx, ny, new_path))
-        return local_path
+                    queue.append((nx, ny, local_path + [direction]))
+        return None, None
 
-    # Main planning loop
-    current_x, current_y = start
-    while True:
-        local_path = bfs(current_x, current_y)
-        if not local_path:
-            break
-        path.extend(local_path)
-        # Update current position
-        for direction in local_path:
-            dx, dy = next((dx, dy) for dir, dx, dy in directions if dir == direction)
-            current_x += dx
-            current_y += dy
-        
-        # Check if all free spaces are visited
-        if all((i, j) in visited or map_array[i][j] == 1 for i in range(rows) for j in range(cols)):
-            break
-        
-        # Find nearest unvisited free space
-        unvisited = [(i, j) for i in range(rows) for j in range(cols) 
+    def find_nearest_unvisited(current_x, current_y):
+        unvisited = [(i, j) for i in range(rows) for j in range(cols)
                      if is_valid(i, j) and (i, j) not in visited]
         if not unvisited:
-            break
-        
-        target = min(unvisited, key=lambda p: abs(p[0]-current_x) + abs(p[1]-current_y))
-        path_to_target = navigate_to(current_x, current_y, target[0], target[1], map_array)
-        path.extend(path_to_target)
-        
-        # Update current position
-        for direction in path_to_target:
-            dx, dy = next((dx, dy) for dir, dx, dy in directions if dir == direction)
-            current_x += dx
-            current_y += dy
-    
+            return None
+        return min(unvisited, key=lambda p: abs(p[0]-current_x) + abs(p[1]-current_y))
+
+    current_x, current_y = start
+    while True:
+        local_path, next_pos = bfs(current_x, current_y)
+        if local_path:
+            path.extend(local_path)
+            current_x, current_y = next_pos
+        else:
+            nearest_unvisited = find_nearest_unvisited(current_x, current_y)
+            if nearest_unvisited is None:
+                break  # All cells have been visited
+            path_to_target = navigate_to(current_x, current_y, nearest_unvisited[0], nearest_unvisited[1], map_array)
+            path.extend(path_to_target)
+            for direction in path_to_target:
+                dx, dy = next((dx, dy) for dir, dx, dy in directions if dir == direction)
+                current_x += dx
+                current_y += dy
+            visited.add((current_x, current_y))
+
     # Return to start
     path_to_start = navigate_to(current_x, current_y, start[0], start[1], map_array)
     path.extend(path_to_start)
-    
+
     return path
 
 def navigate_to(start_x, start_y, end_x, end_y, map_array):
@@ -191,6 +190,7 @@ def encode_instructions(path_instructions, instruction_limit=1):
 
 def visualize_path(map_array, start, instructions):
     rows, cols = len(map_array), len(map_array[0])
+    return_msg = ""
     
     visual_map = [['□' if cell == 0 else '■' for cell in row] for row in map_array]
     
@@ -217,34 +217,73 @@ def visualize_path(map_array, start, instructions):
             print(f"Warning: Instruction {i} ({instruction}) leads out of bounds")
     
     for row in visual_map:
-        print(' '.join(row))
+        return_msg += ' '.join(row) + '\n'
     
-    print("\nLegend:")
-    print("S: Start position")
-    print("E: End position (if different from start)")
-    print("□: Unvisited free space")
-    print("■: Obstacle")
-    print("0-9: Path taken (cyclic)")
+    return return_msg
 
 if __name__ == '__main__':
-    # Uncomment for easier testing
-    """ map = [
+       # Tile size set to 9 - same as in main vacuum behavior tree
+    #grid = pgm_to_binary_2d_array('src/behavior_trees/behavior_trees/resources/altered_map.pgm', 9)
+
+    grid = [
+        ['■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■'],
+        ['■', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '■', '□', '□', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '□', '□', '□', '□', '□', '□', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '□', '■', '□', '□', '■', '□', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '□', '■', '□', '□', '■', '□', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '□', '■', '□', '□', '■', '□', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '□', '■', '□', '□', '■', '□', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '□', '□', '□', '□', '□', '□', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '□', '□', '□', '□', '□', '□', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '□', '□', '□', '□', '□', '□', 'X', '■', '□', '□', '□', '□', '■', '■', '□', '■', '■', '□', '□', '□'],
+        ['■', '□', '□', '□', '□', '□', '□', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '□', '□', '□', '□', '□', '□', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', 'X', 'X', '□', '□', '□', '□', 'R', '■', '□', '□', '□', '□', '■', '■', '□', '■', '■', '□', '□', '□'],
+        ['■', 'X', 'X', '□', '□', '□', '□', '□', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', 'X', 'X', '□', '□', '□', '□', '□', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', 'X', 'X', '□', '□', '□', '□', '□', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '□', 'X', 'X', 'X', 'X', 'X', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '□', 'X', 'X', 'X', 'X', 'X', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '□', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■'],
+        ['□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '■', '□', '■', '□', '□', '□'],
+        ['□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '■', '■', '■', '■', '■', '■', '■', '■', '□', '□', '□', '■', '■', '■', '■', '■', '■', '■', '■', '■'],
+        ['■', '■', '■', '■', '■', '■', '■', '■', '■', '□', '□', '□', '■', '■', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '■', '■', '■', '■', '■', '■', '■', '■', '□', '□', '□', '■', '■', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '■', '■', '■', '■', '■', '■', '■', '■', '□', '□', '□', '■', '■', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '■', '■', '■', '■', '■', '■', '■', '■', '□', '□', '□', '■', '■', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '■', '■', '■', '■', '■', '■', '■', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '■', '■', '■', '■', '■', '■', '■', '■', '□', '□', '□', '■', '■', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '■', '■', '■', '■', '■', '■', '■', '■', '□', '□', '□', '■', '■', '□', '□', '□', '□', '□', '□', '□'],
+        ['■', '■', '■', '■', '■', '■', '■', '■', '■', '□', '□', '□', '■', '■', '□', '□', '□', '□', '□', '□', '□'],
+    ]
+ # Uncomment for easier testing
+    """ grid = [
         [0, 1, 0, 0, 0],
         [0, 1, 1, 1, 0],
         [0, 0, 0, 1, 0],
         [1, 1, 0, 1, 0],
         [0, 0, 0, 0, 0]
     ] """
-
-    # Tile size set to 9 - same as in main vacuum behavior tree
-    map = pgm_to_binary_2d_array('src/behavior_trees/behavior_trees/resources/altered_map.pgm', 9)
-    for row in map:
-        for cell in row:
-            print(cell, end=' ')
-        print()
-    start = (1, 1)
-    path_instructions = vacuum_path(map, start)
-
-    print(encode_instructions(path_instructions, 1))
-    visualize_path(map, start, path_instructions)
-    print(len(map), len(map[0]))
+    #for row in grid:
+    #    for cell in row:
+    #        print(cell, end=' ')
+    #    print()
+    start = (14, 7)
+    visited = set()
+    # add all visited cells in grid ('X' cells) to visited set
+    for row in range(len(grid)):
+        for col in range(len(grid[0])):
+            if grid[row][col] == 'X':
+                visited.add((row, col))
+    grid = [[1 if cell == '■' else 0 for cell in row] for row in grid]
+    
+    grid[start[0]][start[1]] = 0
+    path_instructions = vacuum_path(grid, start, visited)
+    encoded_instructions = encode_instructions(path_instructions, 1)
+    print(encoded_instructions)
+    print(visualize_path(grid, start, path_instructions))

@@ -11,7 +11,7 @@ class PlaceRobotUprightErrorResponder(Node):
         input()
         self.get_logger().info('Attempting to continue...')
         error_responder_msg = String()
-        error_responder_msg.data = 'manual_finished'
+        error_responder_msg.data = 'finished'
         self.publisher.publish(error_responder_msg)
     
     def get_solution_name(self):
