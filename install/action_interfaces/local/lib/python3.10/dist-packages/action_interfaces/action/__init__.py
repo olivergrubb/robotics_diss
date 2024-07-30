@@ -1,1 +1,0 @@
-/home/ollie/ros2_ws/build/action_interfaces/rosidl_generator_py/action_interfaces/action/__init__.py
