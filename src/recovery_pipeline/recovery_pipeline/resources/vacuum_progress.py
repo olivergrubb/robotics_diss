@@ -20,7 +20,7 @@ class VacuumProgressMarker(Node):
     def odom_callback(self, msg):
         if self.marker_counter == self.marker_limiter:
             self.marker_counter = 0
-            # Extract position from odometry message
+
             position = msg.pose.pose.position
             orientation = msg.pose.pose.orientation
 
@@ -30,7 +30,6 @@ class VacuumProgressMarker(Node):
             position.x += map_fixed_frame_x_offset
             position.y += map_fixed_frame_y_offset
 
-            # Create and publish the marker
             marker = self.create_marker(position, orientation)
             self.marker_pub.publish(marker)
 
@@ -50,21 +49,17 @@ class VacuumProgressMarker(Node):
         marker.action = Marker.ADD
         marker.pose.position = position
         
-        # Set marker pose with orientation
         marker.pose.orientation = orientation
         
-        # Set marker scale (size)
         marker.scale.x = 0.45  # Diameter of the cylinder
         marker.scale.y = 0.45
         marker.scale.z = 0.01  # Height of the cylinder
 
-        # Set marker color (RGBA)
         marker.color.r = 0.0
         marker.color.g = 1.0
         marker.color.b = 0.0
         marker.color.a = 1.0
 
-        # Set the lifetime of the marker (0 means infinite)
         marker.lifetime = rclpy.duration.Duration(seconds=0).to_msg()
 
         return marker
