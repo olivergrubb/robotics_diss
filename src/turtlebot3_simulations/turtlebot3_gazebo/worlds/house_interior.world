@@ -16202,7 +16202,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ollie/Documents/Blender Models/entrance_ridge.dae</uri>
+              <uri>/home/oliver/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/entrance_ridge.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -16223,7 +16223,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ollie/Documents/Blender Models/entrance_ridge.dae</uri>
+              <uri>/home/oliver/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/entrance_ridge.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -16300,7 +16300,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ollie/Documents/Blender Models/entrance_ridge.dae</uri>
+              <uri>/home/oliver/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/entrance_ridge.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -16321,7 +16321,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ollie/Documents/Blender Models/entrance_ridge.dae</uri>
+              <uri>/home/oliver/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/entrance_ridge.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -16398,7 +16398,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ollie/Documents/Blender Models/entrance_ridge.dae</uri>
+              <uri>/home/oliver/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/entrance_ridge.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -16419,7 +16419,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ollie/Documents/Blender Models/entrance_ridge.dae</uri>
+              <uri>/home/oliver/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/entrance_ridge.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -16496,7 +16496,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ollie/Documents/Blender Models/entrance_ridge.dae</uri>
+              <uri>/home/oliver/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/entrance_ridge.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -16517,7 +16517,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ollie/Documents/Blender Models/entrance_ridge.dae</uri>
+              <uri>/home/oliver/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/entrance_ridge.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -16597,7 +16597,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ollie/Documents/Blender Models/house_walls.dae</uri>
+              <uri>/home/oliver/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/house_walls.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -16621,7 +16621,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ollie/Documents/Blender Models/house_walls.dae</uri>
+              <uri>/home/oliver/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/house_walls.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
