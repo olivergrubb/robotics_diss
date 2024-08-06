@@ -2,9 +2,9 @@ import py_trees
 import math
 from geometry_msgs.msg import Quaternion, PoseStamped
 
-class Processin_rolloute(py_trees.behaviour.Behaviour):
+class ProcessRoute(py_trees.behaviour.Behaviour):
     def __init__(self, node, blackboard):
-        super(Processin_rolloute, self).__init__("Go To")
+        super(ProcessRoute, self).__init__("Go To")
         self.node = node
         self.blackboard = blackboard
         self._status = py_trees.common.Status.RUNNING
