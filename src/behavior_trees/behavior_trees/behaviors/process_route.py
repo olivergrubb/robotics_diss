@@ -2,9 +2,9 @@ import py_trees
 import math
 from geometry_msgs.msg import Quaternion, PoseStamped
 
-class ProcessRoute(py_trees.behaviour.Behaviour):
+class Processin_rolloute(py_trees.behaviour.Behaviour):
     def __init__(self, node, blackboard):
-        super(ProcessRoute, self).__init__("Go To")
+        super(Processin_rolloute, self).__init__("Go To")
         self.node = node
         self.blackboard = blackboard
         self._status = py_trees.common.Status.RUNNING
@@ -54,17 +54,17 @@ class ProcessRoute(py_trees.behaviour.Behaviour):
     
     def euler_to_quaternion(self, roll, pitch, yaw):
 
-        cy = math.cos(yaw * 0.5)
-        sy = math.sin(yaw * 0.5)
-        cp = math.cos(pitch * 0.5)
-        sp = math.sin(pitch * 0.5)
-        cr = math.cos(roll * 0.5)
-        sr = math.sin(roll * 0.5)
+        cos_yaw = math.cos(yaw * 0.5)
+        sin_yaw = math.sin(yaw * 0.5)
+        cos_pitch = math.cos(pitch * 0.5)
+        sin_pitch = math.sin(pitch * 0.5)
+        cos_roll = math.cos(roll * 0.5)
+        sin_roll = math.sin(roll * 0.5)
 
         q = Quaternion()
-        q.x = cy * cp * sr - sy * sp * cr
-        q.y = sy * cp * sr + cy * sp * cr
-        q.z = sy * cp * cr - cy * sp * sr
-        q.w = cy * cp * cr + sy * sp * sr
+        q.x = cos_yaw * cos_pitch * sin_roll - sin_yaw * sin_pitch * cos_roll
+        q.y = sin_yaw * cos_pitch * sin_roll + cos_yaw * sin_pitch * cos_roll
+        q.z = sin_yaw * cos_pitch * cos_roll - cos_yaw * sin_pitch * sin_roll
+        q.w = cos_yaw * cos_pitch * cos_roll + sin_yaw * sin_pitch * sin_roll
 
         return q

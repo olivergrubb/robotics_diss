@@ -101,13 +101,13 @@ def vacuum_path(map_array, start, visited=None):
             local_visited.add((x, y))
             visited.add((x, y))
             for direction, dx, dy in directions:
-                nx, ny = x + dx, y + dy
-                if is_valid(nx, ny) and (nx, ny) not in visited and (nx, ny) not in local_visited:
-                    return local_path + [direction], (nx, ny)
+                new_x, new_y = x + dx, y + dy
+                if is_valid(new_x, new_y) and (new_x, new_y) not in visited and (new_x, new_y) not in local_visited:
+                    return local_path + [direction], (new_x, new_y)
             for direction, dx, dy in directions:
-                nx, ny = x + dx, y + dy
-                if is_valid(nx, ny) and (nx, ny) not in local_visited:
-                    queue.append((nx, ny, local_path + [direction]))
+                new_x, new_y = x + dx, y + dy
+                if is_valid(new_x, new_y) and (new_x, new_y) not in local_visited:
+                    queue.append((new_x, new_y, local_path + [direction]))
         return None, None
 
     def find_nearest_unvisited(current_x, current_y):
@@ -115,7 +115,9 @@ def vacuum_path(map_array, start, visited=None):
                      if is_valid(i, j) and (i, j) not in visited]
         if not unvisited:
             return None
-        return min(unvisited, key=lambda p: abs(p[0]-current_x) + abs(p[1]-current_y))
+        
+        nearest = min(unvisited, key=lambda cell: abs(cell[0] - current_x) + abs(cell[1] - current_y))
+        return nearest
 
     current_x, current_y = start
     while True:
@@ -126,7 +128,7 @@ def vacuum_path(map_array, start, visited=None):
         else:
             nearest_unvisited = find_nearest_unvisited(current_x, current_y)
             if nearest_unvisited is None:
-                break  # All cells have been visited
+                break  # Will only break when all the cells have been visited
             path_to_target = navigate_to(current_x, current_y, nearest_unvisited[0], nearest_unvisited[1], map_array)
             path.extend(path_to_target)
             for direction in path_to_target:
@@ -159,9 +161,9 @@ def navigate_to(start_x, start_y, end_x, end_y, map_array):
         local_visited.add((x, y))
         
         for direction, dx, dy in directions:
-            nx, ny = x + dx, y + dy
-            if 0 <= nx < rows and 0 <= ny < cols and map_array[nx][ny] == 0:
-                queue.append((nx, ny, path + [direction]))
+            new_x, new_y = x + dx, y + dy
+            if 0 <= new_x < rows and 0 <= new_y < cols and map_array[new_x][new_y] == 0:
+                queue.append((new_x, new_y, path + [direction]))
     
     return []  # This should never happen if the map is fully connected
 
@@ -269,10 +271,10 @@ if __name__ == '__main__':
         [1, 1, 0, 1, 0],
         [0, 0, 0, 0, 0]
     ] """
-    #for row in grid:
-    #    for cell in row:
-    #        print(cell, end=' ')
-    #    print()
+    for row in grid:
+        for cell in row:
+            print(cell, end=' ')
+        print()
     start = (14, 7)
     visited = set()
     # add all visited cells in grid ('X' cells) to visited set
@@ -285,5 +287,5 @@ if __name__ == '__main__':
     grid[start[0]][start[1]] = 0
     path_instructions = vacuum_path(grid, start, visited)
     encoded_instructions = encode_instructions(path_instructions, 1)
-    print(encoded_instructions)
+    #print(encoded_instructions)
     print(visualize_path(grid, start, path_instructions))
