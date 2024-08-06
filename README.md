@@ -52,11 +52,15 @@ colcon build --symlink-install
 Environment (Gazebo + RVIZ):
 . quick_env_setup.sh
 
+When terminating the environment ensure you close both RVIZ and Gazebo (For example, if you ctrl+c in the terminal to exit, run fg to see the background process and ctrl+c out of it too).
+
 Main Vaccum Planner:
 . vacuum_planner.sh
 
 Recovery Pipeline:
 . recovery_pipeline_start.sh
+
+When terminating the recovery pipeline ensure you close both the error detector and error responder (For example, if you ctrl+c in the terminal to exit, run fg to see the background process and ctrl+c out of it too).
 
 
 ---------- TO INVOKE AN ERROR ----------
