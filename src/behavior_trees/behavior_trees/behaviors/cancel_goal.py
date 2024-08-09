@@ -43,7 +43,9 @@ class CancelGoal(py_trees.behaviour.Behaviour):
                 self.blackboard.set("current_goal_handle", None)
                 return py_trees.common.Status.SUCCESS
             elif self.attempt_counter >= 3:
-                self.node.get_logger().error(f"Goal cancellation failed after {self.attempt_counter} attempts \n RESTART THE SYSTEM")
+                self.node.get_logger().error(f"COULDN'T CANCEL CURRENT GOAL AFTER {self.attempt_counter} ATTEMPTS")
+                self.node.get_logger().error("Sometimes nav2 does this. It's a known issue. Please restart the node and try again.")
+                self.node.get_logger().error(f"Cancel response: {cancel_response}")
                 return py_trees.common.Status.FAILURE
             else:
                 self.node.get_logger().error("Goal cancellation was rejected \n Trying again...")

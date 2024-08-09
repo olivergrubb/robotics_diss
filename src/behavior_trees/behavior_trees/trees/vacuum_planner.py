@@ -31,22 +31,28 @@ class VacuumPlanner(Node):
         self.get_logger().info("Starting vacuum_planner Node")
 
     def execute_recovery_tree_callback(self, goal_handle):
-        request_params = ast.literal_eval(goal_handle.request.message)
-        tree_to_execute = request_params['tree_to_execute']
-        instructions = request_params['instructions']
-        self.get_logger().warn(f"Received request to execute recovery tree: {tree_to_execute}")
-        
-        success = False
-        for responder_trees in ALL_RESPONDER_TREES:
-            if responder_trees.get_tree_name(self) == tree_to_execute:
-                responder_tree_instance = responder_trees()
-                success = responder_tree_instance.execute_tree(instructions, blackboard)
-        
-        self.get_logger().info(f"Recovery behaviour tree done with success {success}")
-        
-        response = ExecuteRecoveryTree.Result()
-        response.success = success
-        return response
+        global FATAL_ERROR
+        if FATAL_ERROR:
+            response = ExecuteRecoveryTree.Result()
+            response.success = False
+            return response
+        else:
+            request_params = ast.literal_eval(goal_handle.request.message)
+            tree_to_execute = request_params['tree_to_execute']
+            instructions = request_params['instructions']
+            self.get_logger().warn(f"Received request to execute recovery tree: {tree_to_execute}")
+            
+            success = False
+            for responder_trees in ALL_RESPONDER_TREES:
+                if responder_trees.get_tree_name(self) == tree_to_execute:
+                    responder_tree_instance = responder_trees()
+                    success = responder_tree_instance.execute_tree(instructions, blackboard)
+            
+            self.get_logger().info(f"Recovery behaviour tree done with success {success}")
+            
+            response = ExecuteRecoveryTree.Result()
+            response.success = success
+            return response
     
     def get_blackboard_callback(self, request, response):
         try:
@@ -170,10 +176,25 @@ def check_for_interrupts(node, blackboard):
         recover_sequence = composites.Sequence("Recover Sequence", memory=True)
         cancel_goal = CancelGoal(node, blackboard)
         recover_sequence.add_children([cancel_goal])
-        recover_sequence.tick_once()
+        goal_cancelled = False
+        while not goal_cancelled:
+            recover_sequence.tick_once()
+            status = recover_sequence.status
+            if status == py_trees.common.Status.SUCCESS:
+                goal_cancelled = True
+                node.error_handled = True
+                node.get_logger().info("Goal cancelled successfully.")
+            elif status == py_trees.common.Status.FAILURE:
+                node.error_handled = True
+                global FATAL_ERROR
+                FATAL_ERROR = True
+                break
+            time.sleep(0.1)
         node.error_handled = True
         node.get_logger().info("Waiting for error to be resolved...")
-    
+
+FATAL_ERROR = False
+
 def main(args=None):
     rclpy.init(args=args)
     node = VacuumPlanner()
@@ -182,11 +203,16 @@ def main(args=None):
     behavior_tree = py_trees_ros.trees.BehaviourTree(create_behavior_tree(node))
     behavior_tree.setup(timeout=600.0)
 
+    global FATAL_ERROR
+
     try:
         while rclpy.ok():
             rclpy.spin_once(node, timeout_sec=0.1)
             if node.error_state:
                 check_for_interrupts(node, blackboard)
+                if FATAL_ERROR:
+                    node.get_logger().error("Fatal error occurred. Shutting down...")
+                    break
             else:
                 node.error_handled = False  
                 behavior_tree.root.tick_once()
