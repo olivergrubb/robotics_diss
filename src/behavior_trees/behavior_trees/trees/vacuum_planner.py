@@ -19,6 +19,15 @@ from rclpy.action import ActionServer
 class VacuumPlanner(Node):
     def __init__(self):
         super().__init__('vacuum_planner')
+
+        self.declare_parameter('map_name', 'altered_map')
+        self.declare_parameter('start_position_x', -8.6894)
+        self.declare_parameter('start_position_y', 7.69215)
+        self.declare_parameter('x_offset', 0.4)
+        self.declare_parameter('y_offset', -0.7)
+        self.declare_parameter('map_resolution', 9)
+        self.declare_parameter('start_location', [1, 1])
+
         self.cmd_vel_publisher = self.create_publisher(Twist, 'cmd_vel', 10)
         self.blackboard_service = self.create_service(Trigger, 'get_blackboard', self.get_blackboard_callback)
         self.action_server = ActionServer(self, ExecuteRecoveryTree, 'execute_recovery_tree', self.execute_recovery_tree_callback)
@@ -29,6 +38,17 @@ class VacuumPlanner(Node):
         self.error_handled = False
         self.most_recent_lidar_data = None
         self.get_logger().info("Starting vacuum_planner Node")
+    
+    def get_param_values(self):
+        map_name = self.get_parameter('map_name').get_parameter_value().string_value
+        start_position_x = self.get_parameter('start_position_x').get_parameter_value().double_value
+        start_position_y = self.get_parameter('start_position_y').get_parameter_value().double_value
+        x_offset = self.get_parameter('x_offset').get_parameter_value().double_value
+        y_offset = self.get_parameter('y_offset').get_parameter_value().double_value
+        map_resolution = self.get_parameter('map_resolution').get_parameter_value().integer_value
+        start_location = self.get_parameter('start_location').get_parameter_value().integer_array_value
+
+        return map_name, start_position_x, start_position_y, x_offset, y_offset, map_resolution, start_location
 
     def execute_recovery_tree_callback(self, goal_handle):
         request_params = ast.literal_eval(goal_handle.request.message)
@@ -99,44 +119,11 @@ class VacuumPlanner(Node):
         
         return blackboard
 
-
-# Hard coded start location
-start_location = (1, 1)
-
-blackboard = py_trees.blackboard.Client(name="Blackboard")
-blackboard.register_key(key="path_instructions", access=py_trees.common.Access.WRITE)
-blackboard.register_key(key="path_instructions", access=py_trees.common.Access.READ)
-
-blackboard.register_key(key="map", access=py_trees.common.Access.WRITE)
-blackboard.register_key(key="map", access=py_trees.common.Access.READ)
-
-blackboard.register_key(key="current_map_location", access=py_trees.common.Access.WRITE)
-blackboard.register_key(key="current_map_location", access=py_trees.common.Access.READ)
-blackboard.set("current_map_location", start_location)
-
-blackboard.register_key(key="current_instruction", access=py_trees.common.Access.WRITE)
-blackboard.register_key(key="current_instruction", access=py_trees.common.Access.READ)
-blackboard.set("current_instruction", None)
-
-blackboard.register_key(key="current_goal_handle", access=py_trees.common.Access.WRITE)
-blackboard.register_key(key="current_goal_handle", access=py_trees.common.Access.READ)
-
-blackboard.register_key(key="required_pose", access=py_trees.common.Access.WRITE)
-blackboard.register_key(key="required_pose", access=py_trees.common.Access.READ)
-blackboard.set("required_pose", None)
-
-blackboard.register_key(key="current_pose", access=py_trees.common.Access.WRITE)
-blackboard.register_key(key="current_pose", access=py_trees.common.Access.READ)
-
-
-def create_behavior_tree(node):
+def create_behavior_tree(node, map_name, start_position_x, start_position_y, x_offset, y_offset, map_resolution, start_location):
     current_pose = PoseStamped()
 
-    # Hard coded x, y offset for start location - THIS WILL CHANGE FOR DIFFERENT MAP / STARTING LOCATIONS / TILE RESOLUTION
-    x_offset = 0.4
-    y_offset = -0.70
-    current_pose.pose.position.x = -8.6894 + x_offset
-    current_pose.pose.position.y = 7.69215 + y_offset
+    current_pose.pose.position.x = start_position_x + x_offset
+    current_pose.pose.position.y = start_position_y + y_offset
     blackboard.set("current_pose", current_pose)
     
     # Setup tree
@@ -144,7 +131,7 @@ def create_behavior_tree(node):
     vacuum_sequence = composites.Sequence("Vacuum Sequence", memory=True)
     init_sequence = composites.Sequence("Init Sequence", memory=True)
 
-    route_plan = PlanRoute(node, blackboard, start_location)
+    route_plan = PlanRoute(node, blackboard, start_location, map_name, map_resolution)
     process_route = ProcessRoute(node, blackboard)
     go_to = GoTo(node, blackboard)
     check_if_finished = CheckIfFinished(node, blackboard)
@@ -174,12 +161,41 @@ def check_for_interrupts(node, blackboard):
         node.error_handled = True
         node.get_logger().info("Waiting for error to be resolved...")
     
-def main(args=None):
-    rclpy.init(args=args)
+def main():
+   
+    rclpy.init(args=None)
     node = VacuumPlanner()
     node.error_handled = False
 
-    behavior_tree = py_trees_ros.trees.BehaviourTree(create_behavior_tree(node))
+    map_name, start_position_x, start_position_y, x_offset, y_offset, map_resolution, start_location = VacuumPlanner().get_param_values()
+
+    global blackboard
+    blackboard = py_trees.blackboard.Client(name="Blackboard")
+    blackboard.register_key(key="path_instructions", access=py_trees.common.Access.WRITE)
+    blackboard.register_key(key="path_instructions", access=py_trees.common.Access.READ)
+
+    blackboard.register_key(key="map", access=py_trees.common.Access.WRITE)
+    blackboard.register_key(key="map", access=py_trees.common.Access.READ)
+
+    blackboard.register_key(key="current_map_location", access=py_trees.common.Access.WRITE)
+    blackboard.register_key(key="current_map_location", access=py_trees.common.Access.READ)
+    blackboard.set("current_map_location", start_location)
+
+    blackboard.register_key(key="current_instruction", access=py_trees.common.Access.WRITE)
+    blackboard.register_key(key="current_instruction", access=py_trees.common.Access.READ)
+    blackboard.set("current_instruction", None)
+
+    blackboard.register_key(key="current_goal_handle", access=py_trees.common.Access.WRITE)
+    blackboard.register_key(key="current_goal_handle", access=py_trees.common.Access.READ)
+
+    blackboard.register_key(key="required_pose", access=py_trees.common.Access.WRITE)
+    blackboard.register_key(key="required_pose", access=py_trees.common.Access.READ)
+    blackboard.set("required_pose", None)
+
+    blackboard.register_key(key="current_pose", access=py_trees.common.Access.WRITE)
+    blackboard.register_key(key="current_pose", access=py_trees.common.Access.READ)
+
+    behavior_tree = py_trees_ros.trees.BehaviourTree(create_behavior_tree(node, map_name, start_position_x, start_position_y, x_offset, y_offset, map_resolution, start_location))
     behavior_tree.setup(timeout=600.0)
 
     try:

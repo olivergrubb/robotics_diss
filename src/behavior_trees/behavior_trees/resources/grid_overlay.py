@@ -26,7 +26,7 @@ def overlay_grid(image_path, grid_size):
     return img_array
 
 def main():
-    image_path = 'src/behavior_trees/behavior_trees/resources/altered_map.pgm'
+    image_path = 'src/behavior_trees/behavior_trees/resources/aws_small_house_map.pgm'
     grid_size = 9
     
     img_with_grid = overlay_grid(image_path, grid_size)
