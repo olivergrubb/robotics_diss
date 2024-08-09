@@ -10,6 +10,7 @@ class CancelGoal(py_trees.behaviour.Behaviour):
         self.action_client = None
         self.node = node
         self.cancel_future = None
+        self.attempt_counter = 0
 
     def setup(self, **kwargs):
         self.action_client = ActionClient(self.node, NavigateToPose, 'navigate_to_pose')
@@ -41,9 +42,14 @@ class CancelGoal(py_trees.behaviour.Behaviour):
                 self.node.get_logger().info("Current goal successfully canceled")
                 self.blackboard.set("current_goal_handle", None)
                 return py_trees.common.Status.SUCCESS
-            else:
-                self.node.get_logger().warn("Goal cancellation was rejected")
+            elif self.attempt_counter >= 3:
+                self.node.get_logger().error(f"Goal cancellation failed after {self.attempt_counter} attempts \n RESTART THE SYSTEM")
                 return py_trees.common.Status.FAILURE
+            else:
+                self.node.get_logger().error("Goal cancellation was rejected \n Trying again...")
+                self.cancel_future = self.goal_handle.cancel_goal_async()
+                self.attempt_counter += 1
+                return py_trees.common.Status.RUNNING
         else:
             return py_trees.common.Status.RUNNING
 
