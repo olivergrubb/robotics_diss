@@ -118,7 +118,7 @@ def longest_accessible_side_adjacent_to_cable(map_array):
         return []
 
     rows, cols = len(map_array), len(map_array[0])
-    directions = [("Up", -1, 0), ("Right", 0, 1), ("Down", 1, 0), ("Left", 0, -1)]
+    directions = [(0, 1, 'Left'), (0, -1, 'Right'), (1, 0, 'Up'), (-1, 0, 'Down')]
     longest_paths = []
     max_length = 0
 
@@ -141,7 +141,7 @@ def longest_accessible_side_adjacent_to_cable(map_array):
     for i in range(rows):
         for j in range(cols):
             if is_object(i, j):
-                for direction, dx, dy in directions:
+                for dx, dy, direction in directions:
                     new_x, new_y = i + dx, j + dy
                     if is_valid(new_x, new_y) and is_accessible(new_x, new_y):
                         path = find_path(new_x, new_y, -dx, -dy)
