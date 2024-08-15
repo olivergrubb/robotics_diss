@@ -49,13 +49,17 @@ colcon build --symlink-install
 
 ---------- MAIN SETUP SCRIPTS (Run in separate terminals) ----------
 
-Environment (Gazebo + RVIZ):
-. quick_env_setup.sh
+Environment (Gazebo + RVIZ) (3 options for 3 different maps):
+For basic map: ```. quick_env_setup.sh altered_map```
+For aws small house map: ```. quick_env_setup.sh aws_small_house_map```
+For bookstore map: ```. quick_env_setup.sh bookstore_map```
 
 When terminating the environment ensure you close both RVIZ and Gazebo (For example, if you ctrl+c in the terminal to exit, run fg to see the background process and ctrl+c out of it too).
 
-Main Vaccum Planner:
-. vacuum_planner.sh
+Main Vaccum Planner (3 options for 3 different maps):
+For basic map: ```. vacuum_planner.sh altered_map -8.6894 7.69215 0.4 -0.7 9 1 1```
+For aws small house map: ```. vacuum_planner.sh aws_small_house_map -0.36147 -0.62154 -0.1 -0.6 9 11 20```
+For bookstore map: ```. vacuum_planner.sh bookstore_map -0.17053 -0.35185 0.0 0.6 9 15 17```
 
 Recovery Pipeline:
 . recovery_pipeline_start.sh
