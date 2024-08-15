@@ -5,17 +5,20 @@ import py_trees
 
 
 class PlanRoute(py_trees.behaviour.Behaviour):
-    def __init__(self, node, blackboard, start_location, re_plan_flag = False, name="Plan Route"):
+    def __init__(self, node, blackboard, start_location, map_name, map_resolution, re_plan_flag = False, name="Plan Route"):
         super(PlanRoute, self).__init__(name)
         self.node = node
         self.blackboard = blackboard
         self.start_location = start_location
+        self.map_name = map_name
+        self.map_resolution = map_resolution
         self.re_plan_flag = re_plan_flag
+        self.node.get_logger().info(f"{map_name, map_resolution}")
 
     def initialise(self):
         self.node.get_logger().info("Planning Route")
         if not self.re_plan_flag:
-            self.map_array = pgm_to_binary_2d_array('src/behavior_trees/behavior_trees/resources/altered_map.pgm', 9)
+            self.map_array = pgm_to_binary_2d_array(f'src/behavior_trees/behavior_trees/resources/{self.map_name}.pgm', self.map_resolution)
             self.path_instructions = vacuum_path(self.map_array, self.start_location)
             self.encoded_instructions = encode_instructions(self.path_instructions, 1)
             map = [['□' if cell == 0 else '■' for cell in row] for row in self.map_array]
@@ -130,6 +133,10 @@ def vacuum_path(map_array, start, visited=None):
             if nearest_unvisited is None:
                 break  # Will only break when all the cells have been visited
             path_to_target = navigate_to(current_x, current_y, nearest_unvisited[0], nearest_unvisited[1], map_array)
+            # Ignore unreachable cells
+            if not path_to_target:
+                visited.add(nearest_unvisited)
+                continue
             path.extend(path_to_target)
             for direction in path_to_target:
                 dx, dy = next((dx, dy) for dir, dx, dy in directions if dir == direction)
@@ -164,8 +171,7 @@ def navigate_to(start_x, start_y, end_x, end_y, map_array):
             new_x, new_y = x + dx, y + dy
             if 0 <= new_x < rows and 0 <= new_y < cols and map_array[new_x][new_y] == 0:
                 queue.append((new_x, new_y, path + [direction]))
-    
-    return []  # This should never happen if the map is fully connected
+    return []  # This only happens if the target is unreachable
 
 # Instruction limit is used to group identical instructions. I.e. if the robot moves forward 3 times, it will be encoded as ("Up", 3). Set to 1
 # to encode each individual instruction separately because if error is detected it's most recent successful navigation will at max be 1 grid cell away
@@ -225,9 +231,8 @@ def visualize_path(map_array, start, instructions):
 
 if __name__ == '__main__':
        # Tile size set to 9 - same as in main vacuum behavior tree
-    #grid = pgm_to_binary_2d_array('src/behavior_trees/behavior_trees/resources/altered_map.pgm', 9)
 
-    grid = [
+    """ grid = [
         ['■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■', '■'],
         ['■', 'X', 'X', 'X', 'X', 'X', 'X', 'X', '■', '□', '□', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
         ['■', '□', '□', '□', '□', '□', '□', 'X', '■', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□', '□'],
@@ -262,30 +267,27 @@ if __name__ == '__main__':
         ['■', '■', '■', '■', '■', '■', '■', '■', '■', '□', '□', '□', '■', '■', '□', '□', '□', '□', '□', '□', '□'],
         ['■', '■', '■', '■', '■', '■', '■', '■', '■', '□', '□', '□', '■', '■', '□', '□', '□', '□', '□', '□', '□'],
         ['■', '■', '■', '■', '■', '■', '■', '■', '■', '□', '□', '□', '■', '■', '□', '□', '□', '□', '□', '□', '□'],
-    ]
+    ] """
  # Uncomment for easier testing
-    """ grid = [
+    """ grid = [grid
         [0, 1, 0, 0, 0],
         [0, 1, 1, 1, 0],
         [0, 0, 0, 1, 0],
         [1, 1, 0, 1, 0],
         [0, 0, 0, 0, 0]
     ] """
+    
+
+    start = (16, 16)
+    grid = pgm_to_binary_2d_array('src/behavior_trees/behavior_trees/resources/bookstore_map.pgm', 9)
     for row in grid:
         for cell in row:
-            print(cell, end=' ')
+            print('□' if cell == 0 else '■', end=' ')
         print()
-    start = (14, 7)
-    visited = set()
-    # add all visited cells in grid ('X' cells) to visited set
-    for row in range(len(grid)):
-        for col in range(len(grid[0])):
-            if grid[row][col] == 'X':
-                visited.add((row, col))
-    grid = [[1 if cell == '■' else 0 for cell in row] for row in grid]
-    
-    grid[start[0]][start[1]] = 0
-    path_instructions = vacuum_path(grid, start, visited)
+
+    path_instructions = vacuum_path(grid, start)
     encoded_instructions = encode_instructions(path_instructions, 1)
+    print(encoded_instructions)
+    #grid[start[0]][start[1]] = 'R'
     #print(encoded_instructions)
     print(visualize_path(grid, start, path_instructions))
