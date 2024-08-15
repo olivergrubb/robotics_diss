@@ -26,7 +26,8 @@ class VacuumPlanner(Node):
         self.declare_parameter('x_offset', 0.4)
         self.declare_parameter('y_offset', -0.7)
         self.declare_parameter('map_resolution', 9)
-        self.declare_parameter('start_location', [1, 1])
+        self.declare_parameter('row_start_location', 1)
+        self.declare_parameter('column_start_location', 1)
 
         self.cmd_vel_publisher = self.create_publisher(Twist, 'cmd_vel', 10)
         self.blackboard_service = self.create_service(Trigger, 'get_blackboard', self.get_blackboard_callback)
@@ -46,7 +47,11 @@ class VacuumPlanner(Node):
         x_offset = self.get_parameter('x_offset').get_parameter_value().double_value
         y_offset = self.get_parameter('y_offset').get_parameter_value().double_value
         map_resolution = self.get_parameter('map_resolution').get_parameter_value().integer_value
-        start_location = self.get_parameter('start_location').get_parameter_value().integer_array_value
+        row_start_location = self.get_parameter('row_start_location').get_parameter_value().integer_value
+        column_start_location = self.get_parameter('column_start_location').get_parameter_value().integer_value
+
+        start_location = (row_start_location, column_start_location)
+
 
         return map_name, start_position_x, start_position_y, x_offset, y_offset, map_resolution, start_location
 

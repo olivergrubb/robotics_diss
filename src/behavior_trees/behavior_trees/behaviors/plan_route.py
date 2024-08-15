@@ -278,8 +278,8 @@ if __name__ == '__main__':
     ] """
     
 
-    start = (14, 7)
-    grid = pgm_to_binary_2d_array('src/behavior_trees/behavior_trees/resources/aws_small_house_map.pgm', 9)
+    start = (16, 16)
+    grid = pgm_to_binary_2d_array('src/behavior_trees/behavior_trees/resources/bookstore_map.pgm', 9)
     for row in grid:
         for cell in row:
             print('□' if cell == 0 else '■', end=' ')
