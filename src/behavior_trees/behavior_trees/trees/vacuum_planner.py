@@ -66,12 +66,14 @@ class VacuumPlanner(Node):
             tree_to_execute = request_params['tree_to_execute']
             instructions = request_params['instructions']
             self.get_logger().warn(f"Received request to execute recovery tree: {tree_to_execute}")
+
+            map_name, start_position_x, start_position_y, x_offset, y_offset, map_resolution, start_location = self.get_param_values()
             
             success = False
             for responder_trees in ALL_RESPONDER_TREES:
                 if responder_trees.get_tree_name(self) == tree_to_execute:
                     responder_tree_instance = responder_trees()
-                    success = responder_tree_instance.execute_tree(instructions, blackboard)
+                    success = responder_tree_instance.execute_tree(instructions, blackboard, map_name, map_resolution)
             
             self.get_logger().info(f"Recovery behaviour tree done with success {success}")
             

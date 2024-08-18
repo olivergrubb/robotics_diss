@@ -13,7 +13,7 @@ class MoveCable(Node):
     def get_tree_name(self):
         return "move_cable"
 
-    def execute_tree(self, instructions, blackboard_state):
+    def execute_tree(self, instructions, blackboard_state, map_name=None, map_resolution=None):
         self.get_logger().info("Executing Move Cable Responder Tree")
         original_instructions = blackboard_state.get("path_instructions")
         last_instruction_before_error = blackboard_state.get("current_instruction")
@@ -26,7 +26,7 @@ class MoveCable(Node):
         process_route = ProcessRoute(self, blackboard_state)
         go_to = GoTo(self, blackboard_state)
         check_if_finished = CheckIfFinished(self, blackboard_state)
-        replan_route = PlanRoute(self, blackboard_state, start_location=blackboard_state.get("current_map_location"), re_plan_flag=True)
+        replan_route = PlanRoute(self, blackboard_state, start_location=blackboard_state.get("current_map_location"), map_name=map_name, map_resolution=map_resolution, re_plan_flag=True)
 
         cable_recovery.add_children([process_route, go_to, check_if_finished])
 
