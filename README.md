@@ -1,12 +1,16 @@
 # robotics_diss
 
-Environment setup from clean ubuntu 22.04 install - skip installs as nessesary:
+## Environment Setup from Clean Ubuntu 22.04 Install
 
-Ubuntu 22.04 (Jammy)
-ROS2 (Humble) - https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html
+*Skip installs as necessary*
 
-Turtlebot3 + Gazebo + Nav2 install:
+### Prerequisites
+- Ubuntu 22.04 (Jammy)
+- ROS2 (Humble) - [Installation Guide](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
 
+### Turtlebot3 + Gazebo + Nav2 Installation
+
+```bash
 sudo apt install ros-humble-gazebo-*
 sudo apt install ros-humble-cartographer
 sudo apt install ros-humble-cartographer-ros
@@ -32,49 +36,87 @@ cd ~/ros2_ws
 
 git clone --no-checkout https://github.com/olivergrubb/robotics_diss.git .
 git checkout
+```
 
-(Ensure file structure is ~/ros2_ws/src/... and startup scripts are at ~/ros2_ws level)
+**Note:** Ensure file structure is `~/ros2_ws/src/...` and startup scripts are at `~/ros2_ws` level.
 
+```bash
 sudo apt install ros-humble-py-trees
 sudo apt install ros-humble-py-trees-ros-interfaces
 sudo apt install ros-humble-py-trees-ros
+```
 
-Fix nav2 bug - change robot_model_type: "differential" to "nav2_amcl::DifferentialMotionModel" in /opt/ros/humble/share/turtlebot3_navigation2/param/waffle.yaml
+### Bug Fixes
 
-Fix file paths to models in /ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models
-(Replace all /home/ollie/Documents/Blender Models/ with /$PATH_TO_ROS_WORKSPACE$/src/turtlebot3_simulations/turtlebot3_gazebo/models)
+1. Fix nav2 bug:
+   Change `robot_model_type: "differential"` to `"nav2_amcl::DifferentialMotionModel"` in `/opt/ros/humble/share/turtlebot3_navigation2/param/waffle.yaml`
 
-Make sure still in ~/ros2_ws
+2. Fix file paths to models in `/ros2_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models`:
+   Replace all `/home/ollie/Documents/Blender Models/` with `/$PATH_TO_ROS_WORKSPACE$/src/turtlebot3_simulations/turtlebot3_gazebo/models`
+
+### Build
+
+Make sure you're still in `~/ros2_ws`, then run:
+```bash
 colcon build --symlink-install
+```
 
----------- MAIN SETUP SCRIPTS (Run in separate terminals) ----------
+## Main Setup Scripts
 
-Environment (Gazebo + RVIZ) (3 options for 3 different maps):
-For basic map: ```. quick_env_setup.sh altered_map```
-For aws small house map: ```. quick_env_setup.sh aws_small_house_map```
-For bookstore map: ```. quick_env_setup.sh bookstore_map```
+*Run in separate terminals*
 
-When terminating the environment ensure you close both RVIZ and Gazebo (For example, if you ctrl+c in the terminal to exit, run fg to see the background process and ctrl+c out of it too).
+### Environment (Gazebo + RVIZ)
 
-Main Vaccum Planner (3 options for 3 different maps):
-For basic map: ```. vacuum_planner.sh altered_map -8.6894 7.69215 0.4 -0.7 9 1 1```
-For aws small house map: ```. vacuum_planner.sh aws_small_house_map -0.36147 -0.62154 -0.1 -0.6 9 11 20```
-For bookstore map: ```. vacuum_planner.sh bookstore_map -0.17053 -0.35185 0.0 0.6 9 15 17```
+Three options for different maps:
 
-Recovery Pipeline:
+1. Basic map:
+   ```bash
+   . quick_env_setup.sh altered_map
+   ```
+2. AWS small house map:
+   ```bash
+   . quick_env_setup.sh aws_small_house_map
+   ```
+3. Bookstore map:
+   ```bash
+   . quick_env_setup.sh bookstore_map
+   ```
+
+**Note:** When terminating the environment, ensure you close both RVIZ and Gazebo. If you use Ctrl+C in the terminal to exit, run `fg` to see the background process and Ctrl+C out of it too.
+
+### Main Vacuum Planner
+
+Three options for different maps:
+
+1. Basic map:
+   ```bash
+   . vacuum_planner.sh altered_map -8.6894 7.69215 0.4 -0.7 9 1 1
+   ```
+2. AWS small house map:
+   ```bash
+   . vacuum_planner.sh aws_small_house_map -0.36147 -0.62154 -0.1 -0.6 9 11 20
+   ```
+3. Bookstore map:
+   ```bash
+   . vacuum_planner.sh bookstore_map -0.17053 -0.35185 0.0 0.6 9 15 17
+   ```
+
+### Recovery Pipeline
+
+```bash
 . recovery_pipeline_start.sh
+```
 
-When terminating the recovery pipeline ensure you close both the error detector and error responder (For example, if you ctrl+c in the terminal to exit, run fg to see the background process and ctrl+c out of it too).
+**Note:** When terminating the recovery pipeline, ensure you close both the error detector and error responder. If you use Ctrl+C in the terminal to exit, run `fg` to see the background process and Ctrl+C out of it too.
 
+## Invoking an Error
 
----------- TO INVOKE AN ERROR ----------
+To inject a 'fake' error:
+Run the Python file `fake_detection_pub.py` in `/src/recovery_pipeline/recovery_pipeline/resources`.
 
-Run the python file fake_detection_pub.py in /src/recovery_pipeline/recovery_pipeline/resources to inject a 'fake' error.
+To trigger an 'actual' error:
+Manipulate the Gazebo environment.
 
-Manipulate the Gazebo environment to trigger an 'actual' error.
+## Additional Information
 
-
-
----------- ADDITIONAL INFORMATION ----------
-
-The long_cable model in the simulation is VERY computationally intensive and will likely slow down the simulation significantly on less powerful computers. Remove the cable for increased performance.
+The `long_cable` model in the simulation is VERY computationally intensive and will likely slow down the simulation significantly on less powerful computers. Remove the cable for increased performance.
